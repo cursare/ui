@@ -32,7 +32,7 @@ stylesheet.
 The same source is versioned as a package and can be installed from GitHub:
 
 ```bash
-bun add github:cursare/ui#v0.1.0
+bun add github:cursare/ui#v0.1.1
 ```
 
 ```tsx

@@ -1,6 +1,6 @@
 {
   "name": "@cursare/ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cursare's reusable React UI primitives, built on Base UI and Tailwind CSS.",
   "type": "module",
   "license": "MIT",

@@ -279,6 +279,5 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* No global heading font-family: like Cal.com, the display face is opt-in
-     via the `font-heading` utility (dialog titles, page headings, …). */
+  /* The display face is opt-in through the `font-heading` utility. */
 }

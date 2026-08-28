@@ -20,8 +20,6 @@ interface SettingsToggleProps {
   "data-testid"?: string
 }
 
-/** A one-line boolean setting: title + description with the switch on the right
- * (the Cal.com settings anatomy). Saves immediately — no footer button. */
 export function SettingsToggle({
   title,
   description,
