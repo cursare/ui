@@ -1,0 +1,76 @@
+[data-learner-component="blocks.intake-fields"] {
+  display: grid;
+  gap: var(--learner-space-6);
+}
+
+[data-learner-component="blocks.intake-form-header"] {
+  gap: 0;
+}
+
+[data-learner-component="blocks.intake-form-header"] .intake-form-title {
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+}
+
+[data-learner-component="blocks.intake-form-header"] .intake-form-description {
+  font-size: var(--learner-label-size);
+  line-height: var(--learner-label-line);
+}
+
+[data-learner-family="enrollment"] [data-primary-action="true"] {
+  min-block-size: var(--learner-control-hit);
+}
+
+.learner-enroll-controls {
+  border-radius: var(--learner-radius-surface);
+  background: var(--learner-course-soft);
+}
+
+.learner-enroll-status,
+.learner-checkout-notice,
+.learner-enroll-consent {
+  border-radius: var(--learner-radius-control);
+  background: var(--learner-course-soft);
+}
+
+.learner-enroll-status {
+  padding: var(--learner-space-4);
+}
+
+.learner-offer-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--learner-space-1);
+}
+
+.learner-campaign-banner {
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--learner-radius-media);
+  background: var(--background);
+}
+
+[data-learner-component="web.enroll-controls"][data-enroll-variant="sidebar"] {
+  gap: var(--learner-space-3);
+}
+
+.learner-enroll-copy {
+  gap: var(--learner-space-1);
+}
+
+.learner-enroll-access,
+.learner-enroll-message,
+.learner-enroll-capacity {
+  font-size: var(--learner-label-size);
+  line-height: var(--learner-label-line);
+}
+
+.learner-enroll-capacity {
+  color: var(--muted-foreground);
+}
+
+.learner-cohort-picker {
+  display: block;
+  inline-size: auto;
+}

@@ -1,13 +1,12 @@
 # Contributing
 
-This registry accepts Cursare-owned components composed from official COSS primitives.
-Do not copy COSS primitives into this repository.
+Learner component source is maintained in `packages/learning/blocks` in the Cursare
+monorepo. Generated source under `registry/learner` must not be edited by hand.
 
-1. Add or change files under `src/components` or `src/hooks`.
-2. Use existing COSS primitives through `@cursare/ui/components/<name>` imports.
-3. Add synchronized files to `sync-manifest.json` when the private monorepo needs them.
-4. Run `bun run check`.
-5. Open a focused pull request describing behavior and compatibility impact.
+1. Change and validate the canonical learner package.
+2. Run `bun run registry:sync <path-to-cursare>` in this repository.
+3. Run `bun run check`.
+4. Open a focused pull request with the generated diff.
 
-Breaking changes require a major version. New components and backward-compatible APIs
-require a minor version. Fixes require a patch version.
+Documentation and publishing fixes may be proposed directly here. Dashboard, admin,
+authoring and generic application components are out of scope.

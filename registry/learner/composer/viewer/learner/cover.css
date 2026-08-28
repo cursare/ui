@@ -1,0 +1,30 @@
+.content-cover-media {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  overflow: hidden;
+}
+
+.content-cover-media > .content-cover-fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 90% at 12% 0%, rgb(255 255 255 / 0.28), transparent 60%),
+    radial-gradient(50% 80% at 88% 100%, rgb(0 0 0 / 0.18), transparent 55%),
+    linear-gradient(
+      120deg,
+      var(--fx-a, var(--primary)),
+      var(--fx-b, var(--muted)) 55%,
+      var(--fx-c, var(--accent))
+    );
+}
+
+.content-cover-media > img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--learner-cover-focal-x, 50%) var(--learner-cover-focal-y, 50%);
+}

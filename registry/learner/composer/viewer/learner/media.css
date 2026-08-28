@@ -1,0 +1,153 @@
+[data-learner-family="media"] {
+  position: relative;
+  display: grid;
+  gap: var(--learner-space-3);
+  margin-block: var(--learner-space-8);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-learner-family="media"] > .content-block-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-learner-family="media"] .learner-component-header {
+  position: static;
+  inset: auto;
+  color: var(--foreground);
+}
+
+[data-learner-component="runtime.media.audio"] {
+  gap: var(--learner-space-4);
+  padding: 0;
+}
+
+[data-learner-component="runtime.media.audio"] .learner-component-header {
+  position: static;
+  inset: auto;
+}
+
+[data-learner-component="runtime.media.image"] {
+  display: grid;
+  gap: var(--learner-space-3);
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-learner-component="runtime.media.image"] .learner-component-header {
+  position: static;
+  inset: auto;
+  inline-size: var(--learner-image-width, 100%);
+  max-inline-size: 100%;
+  margin-inline: auto;
+}
+
+[data-learner-component="runtime.media.video"] {
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-learner-component="runtime.media.video"] .learner-block-shell-header {
+  position: static;
+  inset: auto;
+}
+
+[data-learner-component="runtime.media.video"] .content-video-controlled {
+  position: relative;
+}
+
+[data-learner-component="runtime.media.audio"] .content-audio-body {
+  min-inline-size: 0;
+  padding: 0;
+}
+
+[data-learner-component="runtime.media.audio"] .content-audio-player {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--learner-space-3);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-learner-component="runtime.media.audio"] .content-audio-player > audio {
+  display: none;
+}
+
+[data-learner-component="runtime.media.audio"] .content-audio-volume {
+  display: none;
+}
+
+[data-learner-component="runtime.media.audio"] .content-audio-seek {
+  inline-size: 100%;
+  min-block-size: var(--learner-control-hit);
+  accent-color: var(--foreground);
+}
+
+[data-learner-component="runtime.media.audio"] .content-audio-time {
+  color: var(--muted-foreground);
+  font-size: var(--learner-meta-size);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+[data-learner-family="media"] :where(img, video, iframe) {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+/* An embed iframe carries no intrinsic size, so block-size:auto alone collapses
+   it to the small default iframe height. A 16:9 box fills the column at a usable
+   height — the aspect-ratio drives block-size from the full inline-size above. */
+.content-embed-frame {
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--learner-radius-media);
+}
+
+[data-learner-component="runtime.media.image"] .content-image-frame {
+  inline-size: var(--learner-image-width, 100%);
+  max-inline-size: 100%;
+  overflow: clip;
+  margin-inline: auto;
+  border-radius: var(--learner-radius-media);
+}
+
+[data-learner-family="media"] :where(.content-video-reader, .content-video-frame) {
+  overflow: clip;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-learner-component="runtime.media.video"] .content-video-status {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  min-block-size: 0;
+  place-items: center;
+  padding: var(--learner-space-8);
+  background: color-mix(in oklab, var(--background) 12%, transparent);
+  color: var(--muted-foreground);
+}
+
+[data-learner-family="media"] :where(.content-video-status.is-error, [role="alert"]) {
+  background: var(--learner-danger-soft);
+  color: var(--learner-danger-ink);
+}
+
+[data-learner-family="media"] :where(.content-audio-body, .content-embed-caption) {
+  padding: 0;
+}

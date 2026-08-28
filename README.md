@@ -1,42 +1,70 @@
-# Cursare UI
+# Cursare Learner UI
 
-Public registry for components designed by Cursare and composed from the official
-[COSS UI](https://coss.com/ui/) primitives. COSS primitives stay upstream; this
-repository only contains Cursare-owned extensions.
+Public source registry for the learner-facing surfaces rendered by Cursare. It does
+not contain dashboard, admin, authoring or generic Cursare application components.
 
-## Components
+The browsable installed source is under [`registry/learner`](./registry/learner).
+The hosted catalog is available at [cursare.github.io/ui](https://cursare.github.io/ui/).
 
-- `date-picker` — localized ISO date selection
-- `date-range-picker` — localized ranges with presets and limits
-- `phone-input` — international phone input with country selection
-- `settings-toggle` — immediate-save settings row with loading state
-- `use-media-query` — SSR-safe responsive hook
+## Learner components
 
-Browse the hosted registry at [cursare.github.io/ui](https://cursare.github.io/ui/).
+- `course-card`
+- `course-catalog`
+- `learner-home`
+- `curriculum-journey`
+- `enrolled-course-home`
+- `course-player`
+- `course-shell`
+- `course-outline`
+- `study-tools`
+- `intake-form`
+- `blocks` — the complete learner platform
+
+`learner-foundation` and `learner-runtime` are internal registry dependencies installed
+automatically when a surface needs them.
 
 ## Install
 
-Install one component directly:
+Add the hosted namespace to `components.json`:
 
-```bash
-bunx shadcn@latest add cursare/ui/date-picker
+```json
+{
+  "registries": {
+    "@cursare": "https://cursare.github.io/ui/r/{name}.json"
+  }
+}
 ```
 
-Or configure the hosted namespace:
+Install the complete learner platform:
 
 ```bash
-bunx shadcn@latest registry add @cursare=https://cursare.github.io/ui/r/{name}.json
-bunx shadcn@latest add @cursare/date-picker
+bunx shadcn@4.14.0 add @cursare/blocks
 ```
 
-Install every Cursare extension plus the COSS style foundation:
+Or install one focused surface:
 
 ```bash
-bunx shadcn@latest add cursare/ui/ui
+bunx shadcn@4.14.0 add @cursare/course-card
 ```
 
-Transitive primitives such as `Button`, `Calendar`, `Popover`, `Frame`, and `Switch`
-are installed from `@coss`; their source is not duplicated here.
+Without configuring a namespace, use the item URL directly:
+
+```bash
+bunx shadcn@4.14.0 add https://cursare.github.io/ui/r/blocks.json
+```
+
+Import the learner styles once:
+
+```css
+@import "./components/cursare/styles.css";
+@import "./components/cursare/composer/viewer/styles.css";
+```
+
+## COSS and shadcn compatibility
+
+The catalog uses the shadcn registry protocol and CLI. Required COSS/Base UI
+primitives are included as source dependencies of each learner item, so consumers do
+not need a second registry and keep full ownership of the installed code.
 
 ## Development
 
@@ -45,15 +73,21 @@ bun install
 bun run check
 ```
 
-`registry.json` is generated from the source import graph. Imports from
-`@cursare/ui/components/<primitive>` become `@coss/<primitive>` registry dependencies,
-while imports between Cursare extensions stay inside this registry.
+The Cursare monorepo is canonical. This repository contains the generated registry
+artifacts plus a materialized, browsable view of their source.
 
-## Releases and private synchronization
+## Synchronization
 
-GitHub releases are the immutable synchronization boundary for the private Cursare
-monorepo. `sync-manifest.json` lists the Cursare-owned files that may be overlaid into
-the private package; upstream COSS primitives are never deleted or mirrored.
+From this repository, export the current learner registry from a local Cursare
+checkout and validate the exact consumer installation:
+
+```bash
+bun run registry:sync ../cursare
+bun run check
+```
+
+The automated workflow uses the same command. Synchronization only flows from the
+canonical Cursare learner packages into this public distribution.
 
 ## License
 

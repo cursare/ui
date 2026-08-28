@@ -1,8 +1,8 @@
 {
-  "name": "@cursare/ui-registry",
-  "version": "0.2.0",
+  "name": "@cursare/learner-registry",
+  "version": "0.3.0",
   "private": true,
-  "description": "Cursare components composed from the official COSS UI registry.",
+  "description": "Public source registry for Cursare learner-facing surfaces.",
   "type": "module",
   "license": "MIT",
   "author": "Cursare",
@@ -17,34 +17,20 @@
   "keywords": [
     "base-ui",
     "coss",
+    "learner",
     "react",
     "shadcn",
-    "tailwindcss",
-    "ui"
+    "tailwindcss"
   ],
   "scripts": {
-    "check": "bun run typecheck && bun run registry:build && bun run registry:check && bun run registry:smoke",
-    "registry:build": "bun run registry:generate && shadcn build registry.json --output public/r",
-    "registry:check": "bun scripts/generate-registry.ts --check && shadcn registry validate registry.json",
-    "registry:generate": "bun scripts/generate-registry.ts",
+    "check": "bun run registry:check && bun run registry:smoke",
+    "registry:check": "bun scripts/validate-registry.ts",
     "registry:smoke": "bun scripts/smoke-registry.ts",
-    "test": "bun run registry:smoke",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@daypicker/react": "10.0.1",
-    "libphonenumber-js": "1.13.11",
-    "lucide-react": "^1.28.0"
+    "registry:sync": "bun scripts/sync-registry.ts",
+    "test": "bun run registry:check"
   },
   "devDependencies": {
-    "@types/bun": "1.3.14",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "shadcn": "4.16.2",
-    "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3"
+    "@types/bun": "1.3.14"
   },
   "engines": {
     "node": ">=20"

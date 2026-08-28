@@ -1,0 +1,97 @@
+:where(
+  .learner-course-shell,
+  .learner-course-storefront,
+  .content-editor[data-mode="reader"],
+  [data-learner-family]
+) {
+  --learner-motion-focus: 120ms;
+  --learner-motion-reveal: 200ms;
+  --learner-motion-trace: 280ms;
+  --learner-motion-milestone: 700ms;
+  --learner-motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-learner-effect="focus"] {
+  transition:
+    background-color var(--learner-motion-focus) var(--learner-motion-ease),
+    color var(--learner-motion-focus) var(--learner-motion-ease),
+    outline-color var(--learner-motion-focus) var(--learner-motion-ease);
+}
+
+[data-learner-effect="lift"] {
+  transition:
+    transform var(--learner-motion-focus) var(--learner-motion-ease),
+    box-shadow var(--learner-motion-reveal) var(--learner-motion-ease);
+}
+
+[data-learner-effect="lift"][data-active="true"] {
+  transform: translateY(-0.25rem) scale(1.015);
+  box-shadow: var(--learner-elevation-lift);
+}
+
+[data-learner-effect="lift"]:where(:hover, :focus-within) {
+  transform: translateY(-0.25rem) scale(1.015);
+  box-shadow: var(--learner-elevation-lift);
+}
+
+[data-learner-effect="reveal"] {
+  animation: learner-reveal var(--learner-motion-reveal) var(--learner-motion-ease) both;
+}
+
+[data-learner-effect="trace"] {
+  transition: inline-size var(--learner-motion-trace) var(--learner-motion-ease);
+}
+
+[data-learner-effect="trace"] > [data-learner-trace-segment] {
+  animation: learner-trace var(--learner-motion-trace) var(--learner-motion-ease) both;
+}
+
+[data-learner-effect="trace"] > [data-learner-trace-segment]:nth-child(2) {
+  animation-delay: var(--learner-motion-focus);
+}
+
+[data-learner-effect="trace"] > [data-learner-trace-segment]:nth-child(3) {
+  animation-delay: var(--learner-motion-reveal);
+}
+
+[data-learner-effect="milestone"] {
+  animation: learner-milestone var(--learner-motion-milestone) var(--learner-motion-ease) both;
+}
+
+@keyframes learner-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes learner-milestone {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.985);
+  }
+  70% {
+    opacity: 1;
+  }
+}
+
+@keyframes learner-trace {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-learner-effect] {
+    animation: learner-fade 80ms linear both;
+    transform: none;
+    transition: none;
+  }
+
+  @keyframes learner-fade {
+    from {
+      opacity: 0;
+    }
+  }
+}

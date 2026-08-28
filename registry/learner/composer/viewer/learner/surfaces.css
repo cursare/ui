@@ -1,0 +1,75 @@
+[data-learner-surface]:not([data-learner-visual-owner="host"]) {
+  box-sizing: border-box;
+}
+
+[data-learner-surface="plain"]:not([data-learner-visual-owner="host"]) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-learner-surface="tinted"]:not([data-learner-visual-owner="host"]) {
+  border: 0;
+  border-radius: var(--learner-radius-surface);
+  background: var(--learner-course-soft);
+  box-shadow: none;
+}
+
+[data-learner-surface="data"]:not([data-learner-visual-owner="host"]) {
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-learner-surface="technical"]:not([data-learner-visual-owner="host"]) {
+  overflow: auto;
+  border: 0;
+  border-radius: var(--learner-radius-surface);
+  background: var(--learner-neutral-surface);
+  box-shadow: none;
+}
+
+[data-learner-surface="media"]:not([data-learner-visual-owner="host"]) {
+  overflow: clip;
+  border: 0;
+  border-radius: var(--learner-radius-media);
+  background: var(--learner-neutral-surface);
+  box-shadow: none;
+}
+
+[data-learner-surface="media"][data-learner-edge="page-start"]:not(
+  [data-learner-visual-owner="host"]
+) {
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+}
+
+[data-learner-surface="activity"]:not([data-learner-visual-owner="host"]) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-learner-surface="overlay"]:not([data-learner-visual-owner="host"]) {
+  border: var(--learner-line-width) solid var(--border);
+  border-radius: var(--learner-radius-surface);
+  background: var(--background);
+  box-shadow: var(--learner-elevation-overlay);
+}
+
+[data-learner-containment="none"]:not([data-learner-visual-owner="host"]) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+:where(.learner-course-shell, .learner-course-storefront, [data-learner-family])
+  :where(button, a, input, select, textarea, [tabindex]):not([data-slot]):focus-visible {
+  outline: var(--learner-focus-width) solid var(--ring);
+  outline-offset: var(--learner-focus-offset);
+}

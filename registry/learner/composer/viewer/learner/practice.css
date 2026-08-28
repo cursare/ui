@@ -1,0 +1,386 @@
+[data-learner-family="practice"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-inline-size: 0;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  gap: var(--learner-space-4);
+  margin-block: var(--learner-space-8);
+  padding: 0;
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+}
+
+/* The question sits on a faint neutral surface so it reads as a distinct
+   (shadowless) panel — separated from transparent code blocks and the reader
+   beneath it. Its inner card (the graded stage) stays flat on top. */
+.content-question {
+  background: var(--learner-neutral-surface);
+}
+
+[data-learner-component="runtime.practice.poll"] {
+  gap: var(--learner-space-4);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-card {
+  display: grid;
+  gap: var(--learner-space-4);
+  padding: 0;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-question-read {
+  margin: 0;
+  color: var(--foreground);
+  font-weight: 400;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-total {
+  flex: none;
+  color: var(--muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-options {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--learner-space-2);
+  min-inline-size: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-choice {
+  position: relative;
+  inline-size: 100%;
+  min-inline-size: 0;
+  overflow: hidden;
+  justify-content: flex-start;
+  gap: var(--learner-space-3);
+  padding: var(--learner-space-3) var(--learner-space-4);
+  box-shadow: none;
+  text-align: start;
+  transform: none;
+  white-space: normal;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-choice-text {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-choice::before {
+  position: relative;
+  z-index: 1;
+  inline-size: var(--learner-icon-inline);
+  block-size: var(--learner-icon-inline);
+  flex: none;
+  border: var(--learner-line-width) solid var(--muted-foreground);
+  border-radius: var(--learner-radius-pill);
+  background: transparent;
+  box-shadow: none;
+  content: "";
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-choice:not(:disabled):hover {
+  background: var(--learner-course-hover);
+  box-shadow: none;
+  transform: none;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-choice[data-mine] {
+  background: var(--learner-course-selected);
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-choice[data-mine]::before {
+  border: var(--learner-line-width) solid var(--background);
+  background: var(--foreground);
+  box-shadow: none;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: color-mix(in oklab, var(--foreground) 7%, transparent);
+  transition: inline-size var(--learner-motion-reveal) var(--learner-motion-ease);
+}
+
+[data-learner-component="runtime.practice.poll"]
+  :where(.content-poll-choice-text, .content-poll-pct) {
+  position: relative;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-pct {
+  margin-inline-start: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-learner-component="runtime.practice.poll"]
+  .content-poll-choice[data-winner]
+  .content-poll-pct {
+  background: none;
+  color: var(--foreground);
+  -webkit-text-fill-color: currentColor;
+}
+
+[data-learner-component="runtime.practice.poll"]
+  .content-poll-choice[data-winner]
+  .content-poll-choice-text::after {
+  content: none;
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-choice:focus-visible {
+  outline: var(--learner-focus-width) solid var(--foreground);
+  outline-offset: var(--learner-focus-offset);
+}
+
+[data-learner-component="runtime.practice.poll"] .content-poll-hint {
+  margin: 0;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+[data-learner-family="practice"]
+  :where(
+    .content-poll-question-read,
+    .content-poll-choice-text,
+    .content-question-prompt-readonly,
+    .content-question-option-readonly
+  ) {
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-body-size);
+  line-height: var(--learner-body-line);
+}
+
+[data-learner-family="practice"] :where(.content-poll-hint, .content-question-saved) {
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+}
+
+[data-learner-family="practice"]
+  :where(
+    .content-poll-total,
+    .content-poll-pct,
+    .content-question-summary-inline,
+    .content-question-score
+  ) {
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-meta-size);
+  line-height: var(--learner-meta-line);
+}
+
+[data-learner-family="practice"]
+  :where(.content-question-card, .content-poll-card, .content-quiz-frame) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+[data-learner-component="runtime.practice.quiz"]
+  :where(.content-quiz-frame, .content-question-card, .content-question-list) {
+  min-inline-size: 0;
+  inline-size: 100%;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-card {
+  display: grid;
+  gap: var(--learner-space-4);
+  padding: 0;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--learner-space-3);
+  margin-inline-start: auto;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-score {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--learner-space-2);
+  color: var(--foreground);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-score > svg {
+  flex: none;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-summary-inline {
+  flex: none;
+  color: var(--muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-progress {
+  display: block;
+  inline-size: var(--learner-space-16);
+  block-size: var(--learner-space-1);
+  overflow: hidden;
+  border-radius: var(--learner-radius-pill);
+  background: var(--learner-course-selected);
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-progress-value {
+  display: block;
+  block-size: 100%;
+  border-radius: var(--learner-radius-pill);
+  background: var(--foreground);
+}
+
+[data-learner-component="runtime.practice.quiz"]
+  :where(.content-question-list, .content-question-item, .content-question-options) {
+  display: grid;
+  min-inline-size: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-item {
+  gap: var(--learner-space-3);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-prompt-row {
+  display: flex;
+  min-inline-size: 0;
+  align-items: flex-start;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-prompt-readonly {
+  min-inline-size: 0;
+  color: var(--foreground);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-options {
+  gap: var(--learner-space-2);
+  padding: 0;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-option {
+  position: relative;
+  display: grid;
+  min-inline-size: 0;
+  inline-size: 100%;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--learner-space-3);
+  padding: var(--learner-space-3) var(--learner-space-4);
+  cursor: pointer;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-option input[type="radio"] {
+  position: absolute;
+  inline-size: var(--learner-line-width);
+  block-size: var(--learner-line-width);
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-option::before {
+  inline-size: var(--learner-icon-inline);
+  block-size: var(--learner-icon-inline);
+  border: var(--learner-line-width) solid var(--muted-foreground);
+  border-radius: var(--learner-radius-pill);
+  background: var(--background);
+  content: "";
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-option:has(input:focus-visible) {
+  outline: var(--learner-focus-width) solid var(--ring);
+  outline-offset: var(--learner-focus-offset);
+}
+
+[data-learner-component="runtime.practice.quiz"]
+  .content-question-option:has(input:checked)::before {
+  border: var(--learner-line-width) solid var(--foreground);
+  background: var(--learner-choice-selected-marker);
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-option-readonly {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+[data-learner-component="runtime.practice.quiz"] .content-question-mark {
+  margin-inline-start: auto;
+}
+
+[data-learner-family="practice"] .content-question-head {
+  display: flex;
+  min-block-size: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--learner-space-3);
+  padding: 0;
+  border: 0;
+}
+
+[data-learner-family="practice"] :where(.content-question-option, .content-poll-choice) {
+  min-block-size: var(--learner-control-hit);
+  border: 0;
+  border-radius: var(--learner-radius-control);
+  background: transparent;
+  transition:
+    background-color var(--learner-motion-focus) var(--learner-motion-ease),
+    color var(--learner-motion-focus) var(--learner-motion-ease),
+    transform var(--learner-motion-focus) var(--learner-motion-ease);
+}
+
+[data-learner-family="practice"] .content-poll-choice:hover {
+  background: var(--learner-course-hover);
+}
+
+[data-learner-family="practice"] .content-poll-choice[aria-pressed="true"] {
+  background: var(--learner-course-selected);
+}
+
+[data-learner-family="practice"]
+  :where(.content-question-option[data-correct], [data-correct], [data-result="correct"]) {
+  background: var(--learner-success-soft);
+  color: var(--learner-success-ink);
+}
+
+[data-learner-family="practice"]
+  :where(.content-question-option[data-wrong], [data-wrong], [data-result="incorrect"]) {
+  background: var(--learner-danger-soft);
+  color: var(--learner-danger-ink);
+}
+
+[data-learner-family="practice"] .content-question-item + .content-question-item {
+  border-block-start: var(--learner-line-width) solid var(--border);
+}
+
+[data-learner-family="practice"] .content-poll-fill {
+  inline-size: var(--learner-poll-fill, 0%);
+}
+
+[data-learner-family="practice"] .content-question-progress-value {
+  inline-size: var(--learner-question-progress, 0%);
+  transition: inline-size var(--learner-motion-reveal) var(--learner-motion-ease);
+}
+
+[data-learner-family="practice"] .content-question-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--learner-space-3);
+  margin-block-start: var(--learner-space-2);
+  padding-block-start: var(--learner-space-4);
+  border: 0;
+}
+
+[data-learner-family="practice"] .content-question-navigation > :last-child {
+  margin-inline-start: auto;
+}

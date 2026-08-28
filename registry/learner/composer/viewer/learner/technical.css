@@ -1,0 +1,192 @@
+.content-editor,
+[data-learner-family="technical"] {
+  --syntax-comment: color-mix(in oklab, var(--muted-foreground) 82%, transparent);
+  --syntax-punctuation: color-mix(in oklab, var(--foreground) 58%, transparent);
+  --syntax-keyword: color-mix(in oklab, var(--destructive) 24%, var(--foreground));
+  --syntax-function: color-mix(in oklab, var(--info) 24%, var(--foreground));
+  --syntax-string: color-mix(in oklab, var(--success) 44%, var(--foreground));
+  --syntax-number: color-mix(in oklab, var(--warning) 24%, var(--foreground));
+  --syntax-danger: color-mix(in oklab, var(--destructive) 46%, var(--foreground));
+}
+
+[data-learner-family="technical"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-inline-size: 0;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  gap: var(--learner-space-4);
+  margin-block: var(--learner-space-8);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+}
+
+[data-learner-component="runtime.technical.diagram"] {
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-learner-family="technical"] > * {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.content-prose :is(.token.comment, .token.prolog, .token.doctype, .token.cdata) {
+  color: var(--syntax-comment);
+  font-style: italic;
+}
+
+.content-prose .token.punctuation,
+.content-prose :is(.token.operator, .token.entity, .token.url) {
+  color: var(--syntax-punctuation);
+}
+
+.content-prose :is(.token.property, .token.tag, .token.constant, .token.symbol, .token.deleted) {
+  color: var(--syntax-danger);
+}
+
+.content-prose :is(.token.boolean, .token.number, .token.regex, .token.important, .token.variable) {
+  color: var(--syntax-number);
+}
+
+.content-prose
+  :is(
+    .token.selector,
+    .token.attr-name,
+    .token.string,
+    .token.char,
+    .token.builtin,
+    .token.inserted
+  ) {
+  color: var(--syntax-string);
+}
+
+.content-prose :is(.token.atrule, .token.attr-value, .token.keyword) {
+  color: var(--syntax-keyword);
+}
+
+.content-prose :is(.token.function, .token.class-name) {
+  color: var(--syntax-function);
+}
+
+.content-prose :is(.token.important, .token.bold) {
+  font-weight: 700;
+}
+
+.content-prose .token.italic {
+  font-style: italic;
+}
+
+[data-learner-family="technical"] > .content-block-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-learner-family="technical"] .content-code-block-bar {
+  display: flex;
+  min-block-size: var(--learner-control-compact);
+  align-items: center;
+  gap: var(--learner-space-2);
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+[data-learner-family="technical"] pre {
+  max-inline-size: 100%;
+  overflow: auto;
+  margin: 0;
+  padding: var(--learner-space-3) 0 0;
+  border: 0;
+  background: transparent;
+}
+
+[data-learner-family="technical"] :where(.content-code-block pre, .content-code-block pre *) {
+  font-family: var(--learner-font-mono);
+  font-size: var(--learner-code-size);
+  line-height: var(--learner-code-line);
+}
+
+[data-learner-family="technical"] .content-code-block-copy {
+  margin-inline-start: auto;
+}
+
+[data-learner-family="technical"] .content-code-block-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--learner-space-2);
+  color: var(--muted-foreground);
+  font-size: var(--learner-label-size);
+  font-weight: 400;
+  line-height: var(--learner-label-line);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+[data-learner-family="technical"] .content-code-block-label > svg {
+  inline-size: var(--learner-icon-inline);
+  block-size: var(--learner-icon-inline);
+}
+
+[data-learner-family="technical"] :where(.content-math-render) {
+  display: grid;
+  min-block-size: calc(var(--learner-card-min) - var(--learner-space-8));
+  place-items: center;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  margin: 0;
+  padding: var(--learner-space-2) 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-learner-family="technical"] .content-diagram-flow {
+  block-size: var(--learner-diagram-stage);
+  min-block-size: var(--learner-stage-min);
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-learner-family="technical"] .content-diagram-flow .react-flow__node {
+  min-inline-size: var(--learner-diagram-node-inline);
+  padding: var(--learner-space-3) var(--learner-space-4);
+  border: var(--learner-line-width) solid var(--border);
+  border-radius: var(--learner-radius-control);
+  background: var(--background);
+  box-shadow: none;
+  color: var(--foreground);
+  font: inherit;
+}
+
+[data-learner-family="technical"] .content-diagram-flow .react-flow__edge-path {
+  stroke: var(--muted-foreground);
+}
+
+[data-learner-family="technical"] .content-diagram-controls {
+  display: flex;
+  gap: var(--learner-space-2);
+}
+
+[data-learner-family="technical"] .content-math-render {
+  font-size: var(--learner-h3-size);
+}
+
+[data-learner-family="technical"] :where(.content-diagram-error) {
+  margin: 0;
+  padding: var(--learner-space-2) 0;
+  font-size: var(--learner-label-size);
+  line-height: var(--learner-label-line);
+}

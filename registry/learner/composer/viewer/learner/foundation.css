@@ -1,0 +1,426 @@
+:where(
+  .learner-course-shell,
+  .learner-course-storefront,
+  .content-editor[data-mode="reader"],
+  [data-learner-family]
+) {
+  --learner-font-sans: var(--font-cal-sans), ui-sans-serif, system-ui, sans-serif;
+  --learner-font-heading: var(--font-cal-sans), ui-sans-serif, system-ui, sans-serif;
+  --learner-font-prose: var(--font-cal-sans), ui-sans-serif, system-ui, sans-serif;
+  --learner-font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --learner-display-size: clamp(3rem, 7vw, 5rem);
+  --learner-display-line: 0.95;
+  --learner-h1-size: clamp(1.75rem, 3vw, 2.125rem);
+  --learner-h1-line: 1.08;
+  --learner-h2-size: clamp(1.5rem, 2.5vw, 1.75rem);
+  --learner-h2-line: 1.2;
+  --learner-h3-size: 1.25rem;
+  --learner-h3-line: 1.5rem;
+  --learner-body-size: 1rem;
+  --learner-body-line: 1.625rem;
+  --learner-ui-size: 1rem;
+  --learner-ui-line: 1.375rem;
+  --learner-label-size: 0.875rem;
+  --learner-label-line: 1.25rem;
+  --learner-meta-size: 0.8125rem;
+  --learner-meta-line: 1.125rem;
+  --learner-badge-size: 0.625rem;
+  --learner-badge-line: 1;
+  --learner-badge-padding: 0.2rem;
+  --learner-code-size: 0.9375rem;
+  --learner-code-line: 1.5rem;
+  --learner-space-1: 0.25rem;
+  --learner-space-2: 0.5rem;
+  --learner-space-3: 0.75rem;
+  --learner-space-4: 1rem;
+  --learner-space-6: 1.5rem;
+  --learner-space-8: 2rem;
+  --learner-space-12: 3rem;
+  --learner-space-16: 4rem;
+  --learner-space-24: 6rem;
+  --learner-measure-prose: 43rem;
+  --learner-measure-wide: 60rem;
+  --learner-measure-media: 75rem;
+  --learner-page-gutter: 1rem;
+  --learner-radius-control: 0.625rem;
+  --learner-radius-surface: 1.125rem;
+  --learner-radius-media: 1.25rem;
+  --learner-radius-pill: 9999px;
+  --learner-control-hit: 2.75rem;
+  --learner-control-compact: 2rem;
+  --learner-control-tab: 2.25rem;
+  --learner-stage-min: 20rem;
+  --learner-card-min: 15rem;
+  --learner-card-max: 38rem;
+  --learner-deck-mobile-min: 18rem;
+  --learner-selection-column: 20rem;
+  --learner-input-inline: 11rem;
+  --learner-perspective: 70rem;
+  --learner-overlay-inline: calc(100vw - var(--learner-space-8));
+  --learner-cover-block-size: clamp(11.25rem, 30vw, 21.25rem);
+  --learner-cover-shade: linear-gradient(to top, rgb(0 0 0 / 22%), transparent 42%);
+  --learner-overlay-scrim: rgb(0 0 0 / 42%);
+  --learner-overlay-ink: rgb(255 255 255 / 86%);
+  --learner-overlay-backdrop: blur(8px);
+  --learner-display-tracking: -0.04em;
+  --learner-icon-stroke: 1.75;
+  --learner-icon-inline: 1rem;
+  --learner-icon-control: 1.125rem;
+  --learner-icon-component: 1.25rem;
+  --learner-icon-hero: 1.5rem;
+  --learner-line-width: 1px;
+  --learner-focus-width: 2px;
+  --learner-focus-offset: 2px;
+  --learner-elevation-raised: 0 8px 24px -16px rgb(0 0 0 / 28%);
+  --learner-elevation-lift: 0 18px 36px -18px rgb(0 0 0 / 32%);
+  --learner-elevation-overlay: 0 24px 64px -24px rgb(0 0 0 / 40%);
+  --course-accent: var(--primary);
+  --course-action-ink: var(--primary-foreground);
+  --fx-a: var(--course-accent);
+  --fx-b: var(--course-accent);
+  --fx-c: var(--course-accent);
+  --fx-ink: var(--course-action-ink);
+  --learner-course-hover: color-mix(in oklab, var(--background) 96%, var(--foreground) 4%);
+  --learner-course-soft: color-mix(in oklab, var(--background) 94%, var(--foreground) 6%);
+  --learner-course-selected: color-mix(in oklab, var(--background) 89%, var(--foreground) 11%);
+  --learner-choice-selected-marker: radial-gradient(
+    circle,
+    var(--foreground) 0 38%,
+    var(--background) 42%
+  );
+  --learner-course-fade: linear-gradient(to right, transparent, var(--learner-course-soft));
+  --learner-neutral-surface: color-mix(in oklab, var(--background) 97%, var(--foreground) 3%);
+  --learner-deck-surface: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--background) 97%, var(--foreground) 3%),
+    color-mix(in oklab, var(--background) 92%, var(--foreground) 8%)
+  );
+  --learner-deck-card: color-mix(in oklab, var(--background) 97%, var(--foreground) 3%);
+  --learner-info-soft: color-mix(in oklab, var(--background) 90%, var(--info) 10%);
+  --learner-info-ink: var(--info-foreground);
+  --learner-success-soft: color-mix(in oklab, var(--background) 90%, var(--success) 10%);
+  --learner-success-ink: var(--success-foreground);
+  --learner-warning-soft: color-mix(in oklab, var(--background) 90%, var(--warning) 10%);
+  --learner-warning-ink: var(--warning-foreground);
+  --learner-danger-soft: color-mix(in oklab, var(--background) 90%, var(--destructive) 10%);
+  --learner-danger-ink: var(--destructive-foreground);
+  --learner-technical-padding: var(--learner-space-3);
+  --learner-technical-toolbar-align: flex-start;
+  --learner-diagram-stage: clamp(20rem, 52vw, 34rem);
+  --learner-diagram-node-inline: 8rem;
+  --learner-deck-track-gap: var(--learner-space-3);
+  --learner-deck-track-padding: var(--learner-space-2);
+  --learner-deck-item-inline: calc(100cqi - var(--learner-space-4));
+  --learner-deck-slide-min: var(--learner-deck-mobile-min);
+  --learner-deck-card-min-responsive: var(--learner-deck-mobile-min);
+  --learner-deck-item-padding: var(--learner-space-6);
+  --learner-deck-controls-gap: var(--learner-space-2);
+  --learner-deck-controls-padding: var(--learner-space-2);
+  --learner-certificate-ratio: auto;
+  --learner-certificate-gap: var(--learner-space-8);
+  --learner-certificate-padding: var(--learner-space-6);
+  --learner-certificate-brand-align: flex-start;
+  --learner-certificate-cursare-inline: 100%;
+  --learner-certificate-details-columns: 1fr;
+  --learner-certificate-verification-align: start;
+  --learner-credential-code-background: white;
+  color: var(--foreground);
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+}
+
+:where(
+    .learner-course-shell,
+    .learner-course-storefront,
+    .content-editor[data-mode="reader"],
+    [data-learner-family]
+  )
+  :where(*:not([data-slot])) {
+  font-family: inherit;
+}
+
+:where(.learner-course-shell, .learner-course-storefront, [data-learner-family])
+  :where(.content-block-label, .content-block-field-label, .content-code-block-label) {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+@media (min-width: 360px) {
+  :where(
+    .learner-course-shell,
+    .learner-course-storefront,
+    .content-editor[data-mode="reader"],
+    [data-learner-family]
+  ) {
+    --learner-page-gutter: 1.25rem;
+  }
+}
+
+@media (min-width: 640px) {
+  :where(
+    .learner-course-shell,
+    .learner-course-storefront,
+    .content-editor[data-mode="reader"],
+    [data-learner-family]
+  ) {
+    --learner-page-gutter: 2rem;
+    --learner-technical-padding: var(--learner-space-4);
+    --learner-technical-toolbar-align: center;
+    --learner-deck-track-gap: var(--learner-space-4);
+    --learner-deck-track-padding: max(
+      calc((var(--learner-space-24) + var(--learner-space-16)) / 2),
+      calc((100cqi - var(--learner-measure-wide)) / 2)
+    );
+    --learner-deck-item-inline: min(
+      calc(100cqi - var(--learner-space-24) - var(--learner-space-16)),
+      var(--learner-measure-wide)
+    );
+    --learner-deck-slide-min: var(--learner-stage-min);
+    --learner-deck-card-min-responsive: var(--learner-card-min);
+    --learner-deck-item-padding: var(--learner-space-8);
+    --learner-deck-controls-gap: var(--learner-space-3);
+    --learner-deck-controls-padding: 0;
+    --learner-certificate-ratio: 297 / 210;
+    --learner-certificate-gap: var(--learner-space-6);
+    --learner-certificate-padding: var(--learner-space-8);
+    --learner-certificate-brand-align: center;
+    --learner-certificate-cursare-inline: auto;
+    --learner-certificate-details-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 0.8fr) auto;
+    --learner-certificate-verification-align: end;
+  }
+}
+
+@media (min-width: 1024px) {
+  :where(
+    .learner-course-shell,
+    .learner-course-storefront,
+    .content-editor[data-mode="reader"],
+    [data-learner-family]
+  ) {
+    --learner-page-gutter: 3rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  [data-learner-family="practice"] .content-question-navigation > [data-slot="button"] {
+    flex: 1;
+  }
+}
+
+:where(
+    .learner-course-shell,
+    .learner-course-storefront,
+    .content-editor[data-mode="reader"],
+    [data-learner-family]
+  )
+  :where(
+    button:not([data-slot]),
+    input:not([data-slot]),
+    textarea:not([data-slot]),
+    select:not([data-slot])
+  ) {
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+}
+
+:where(
+    .learner-course-shell,
+    .learner-course-storefront,
+    .content-editor[data-mode="reader"],
+    [data-learner-family]
+  )
+  :where(button, a, input, select, textarea) {
+  touch-action: manipulation;
+}
+
+:where(
+    .learner-course-shell,
+    .learner-course-storefront,
+    .content-editor[data-mode="reader"],
+    [data-learner-family]
+  )
+  :where(
+    button:not([data-slot="button"]),
+    a:not([data-slot="button"]),
+    [role="button"],
+    [role="option"]
+  ) {
+  min-block-size: var(--learner-control-hit);
+}
+
+[data-learner-measure="inline"] {
+  inline-size: auto;
+}
+
+[data-learner-measure="prose"] {
+  inline-size: min(100%, var(--learner-measure-prose));
+}
+
+[data-learner-measure="wide"] {
+  inline-size: min(100%, var(--learner-measure-wide));
+}
+
+[data-learner-measure="media"] {
+  inline-size: min(100%, var(--learner-measure-media));
+}
+
+[data-learner-measure="page"] {
+  inline-size: 100%;
+}
+
+.learner-measure[data-learner-measure="page"] {
+  padding-inline: var(--learner-page-gutter);
+}
+
+.learner-component {
+  min-inline-size: 0;
+}
+
+.learner-component-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--learner-space-3);
+}
+
+.learner-component-heading {
+  display: grid;
+  gap: var(--learner-space-1);
+  min-inline-size: 0;
+}
+
+.learner-component-icon {
+  display: inline-grid;
+  inline-size: var(--learner-icon-component);
+  block-size: var(--learner-icon-component);
+  margin-block-start: calc((var(--learner-h3-line) - var(--learner-icon-component)) / 2);
+  place-items: center;
+}
+
+.learner-component-icon > svg {
+  inline-size: var(--learner-icon-component);
+  block-size: var(--learner-icon-component);
+  stroke-width: var(--learner-icon-stroke);
+}
+
+[data-learner-icon="inline"] > svg,
+svg[data-learner-icon="inline"] {
+  inline-size: var(--learner-icon-inline);
+  block-size: var(--learner-icon-inline);
+  stroke-width: var(--learner-icon-stroke);
+}
+
+[data-learner-icon="control"] > svg,
+svg[data-learner-icon="control"] {
+  inline-size: var(--learner-icon-control);
+  block-size: var(--learner-icon-control);
+  stroke-width: var(--learner-icon-stroke);
+}
+
+[data-learner-icon="component"] > svg,
+svg[data-learner-icon="component"] {
+  inline-size: var(--learner-icon-component);
+  block-size: var(--learner-icon-component);
+  stroke-width: var(--learner-icon-stroke);
+}
+
+[data-learner-icon="hero"] > svg,
+svg[data-learner-icon="hero"] {
+  inline-size: var(--learner-icon-hero);
+  block-size: var(--learner-icon-hero);
+  stroke-width: var(--learner-icon-stroke);
+}
+
+.learner-component-title {
+  font-family: var(--learner-font-sans);
+  font-weight: 600;
+  font-size: var(--learner-h3-size);
+  line-height: var(--learner-h3-line);
+  overflow-wrap: anywhere;
+}
+
+.learner-block-shell {
+  display: grid;
+  min-inline-size: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.learner-block-shell-header {
+  padding: 0;
+}
+
+.learner-block-shell-body {
+  min-inline-size: 0;
+}
+
+.learner-component-description {
+  max-inline-size: var(--learner-measure-prose);
+  color: var(--muted-foreground);
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+  overflow-wrap: anywhere;
+}
+
+.learner-component-metadata,
+.learner-component-progress-label {
+  color: var(--muted-foreground);
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-meta-size);
+  line-height: var(--learner-meta-line);
+}
+
+.learner-component-instruction {
+  max-inline-size: var(--learner-measure-prose);
+  color: var(--muted-foreground);
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+}
+
+.learner-component-actions,
+.learner-component-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--learner-space-2);
+}
+
+.learner-component-progress {
+  display: grid;
+  gap: var(--learner-space-2);
+}
+
+.learner-component-progress-track {
+  block-size: var(--learner-space-1);
+  overflow: hidden;
+  border-radius: var(--learner-radius-pill);
+  background: color-mix(in oklab, var(--foreground) 10%, transparent);
+}
+
+.learner-component-progress-track > span {
+  display: block;
+  inline-size: var(--learner-progress, 0%);
+  block-size: 100%;
+  border-radius: inherit;
+  background: var(--course-accent);
+  transition: inline-size var(--learner-motion-trace) var(--learner-motion-ease);
+}
+
+.learner-component-feedback,
+.learner-component-empty {
+  font-family: var(--learner-font-sans);
+  font-size: var(--learner-ui-size);
+  line-height: var(--learner-ui-line);
+}
+
+[data-learner-theme-role="source-owned"] :where(img, svg) {
+  filter: none;
+}

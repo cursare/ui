@@ -1,38 +1,69 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cursare UI Registry</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cursare learner-facing React source registry." />
+    <title>Cursare Learner UI</title>
     <style>
-      :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; }
-      body { display: grid; min-height: 100vh; margin: 0; place-items: center; background: #f5f5f4; color: #292524; }
-      main { width: min(42rem, calc(100% - 3rem)); }
-      code { display: block; overflow-x: auto; border: 1px solid #d6d3d1; border-radius: 0.75rem; background: #fff; padding: 1rem; }
-      ul { display: grid; padding: 0; list-style: none; gap: 0.5rem; }
-      li a { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d3d1; padding: 0.75rem 0; text-decoration: none; }
-      a { color: inherit; }
-      @media (prefers-color-scheme: dark) {
-        body { background: #0c0a09; color: #e7e5e4; }
-        code { border-color: #44403c; background: #1c1917; }
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        background: #10110f;
+        color: #f2f2ee;
       }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 85% 0%, #223327 0, transparent 34rem), #10110f; }
+      main { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 96px 0; }
+      header { max-width: 760px; margin-bottom: 64px; }
+      .eyebrow { color: #81c995; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+      h1 { margin: 16px 0 20px; font-size: clamp(48px, 8vw, 88px); line-height: .95; letter-spacing: -.06em; }
+      p { color: #a9aaa4; font-size: 18px; line-height: 1.6; }
+      code { font-family: ui-monospace, SFMono-Regular, monospace; }
+      .command { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 32px; padding: 18px 20px; border: 1px solid #343631; border-radius: 14px; background: #171815; overflow-x: auto; }
+      .command code { color: #dfe7dc; white-space: nowrap; }
+      .badges { display: flex; gap: 8px; margin-top: 18px; }
+      .badge { padding: 6px 10px; border: 1px solid #405345; border-radius: 999px; color: #a6d4b1; font-size: 12px; }
+      h2 { margin: 0 0 20px; font-size: 24px; }
+      #catalog { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+      .item { min-height: 150px; padding: 22px; border: 1px solid #2d2f2b; border-radius: 18px; background: color-mix(in srgb, #191a17 92%, transparent); }
+      .item h3 { margin: 0 0 12px; font-size: 17px; }
+      .item p { margin: 0; font-size: 14px; line-height: 1.5; }
+      .item.internal { opacity: .62; }
+      footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #2d2f2b; color: #777972; font-size: 14px; }
+      a { color: inherit; }
+      @media (max-width: 780px) { main { padding: 56px 0; } #catalog { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
     <main>
-      <p>Cursare</p>
-      <h1>UI registry</h1>
-      <p>Cursare-owned components composed from official COSS UI primitives.</p>
-      <code>bunx shadcn@latest add cursare/ui/date-picker</code>
-      <h2>Components</h2>
-      <ul>
-        <li><a href="./r/date-picker.json"><span>Date picker</span><span>JSON</span></a></li>
-        <li><a href="./r/date-range-picker.json"><span>Date range picker</span><span>JSON</span></a></li>
-        <li><a href="./r/phone-input.json"><span>Phone input</span><span>JSON</span></a></li>
-        <li><a href="./r/settings-toggle.json"><span>Settings toggle</span><span>JSON</span></a></li>
-        <li><a href="./r/use-media-query.json"><span>useMediaQuery</span><span>JSON</span></a></li>
-      </ul>
-      <p><a href="https://github.com/cursare/ui">Source and documentation</a></p>
+      <header>
+        <div class="eyebrow">Cursare · public source registry</div>
+        <h1>Learner UI</h1>
+        <p>Portable learner surfaces, the rich course player, and their exact rendering runtime. No dashboard or admin components.</p>
+        <div class="command"><code>bunx shadcn@4.14.0 add https://cursare.github.io/ui/r/blocks.json</code></div>
+        <div class="badges"><span class="badge">shadcn CLI</span><span class="badge">COSS / Base UI</span><span class="badge">source owned</span></div>
+      </header>
+      <section>
+        <h2>Registry catalog</h2>
+        <div id="catalog"></div>
+      </section>
+      <footer><a href="https://github.com/cursare/ui">Source on GitHub</a> · MIT</footer>
     </main>
+    <script type="module">
+      const registry = await fetch("./r/registry.json").then((response) => response.json())
+      const internal = new Set(["learner-foundation", "learner-runtime"])
+      const catalog = document.querySelector("#catalog")
+      for (const item of registry.items) {
+        const card = document.createElement("article")
+        card.className = `item${internal.has(item.name) ? " internal" : ""}`
+        const title = document.createElement("h3")
+        title.textContent = item.name
+        const description = document.createElement("p")
+        description.textContent = internal.has(item.name) ? "Installed automatically when required." : item.description
+        card.append(title, description)
+        catalog.append(card)
+      }
+    </script>
   </body>
 </html>
