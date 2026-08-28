@@ -8,13 +8,13 @@ type PackageJson = {
 
 type RegistryFile = {
   path: string
-  type: "registry:hook" | "registry:lib" | "registry:ui"
+  type: "registry:hook" | "registry:ui"
   target: string
 }
 
 type RegistryItem = {
   name: string
-  type: "registry:hook" | "registry:item" | "registry:lib" | "registry:ui"
+  type: "registry:hook" | "registry:item" | "registry:ui"
   title: string
   description: string
   dependencies?: string[]
@@ -29,9 +29,78 @@ const packageJson = JSON.parse(
 ) as PackageJson
 const checkOnly = process.argv.includes("--check")
 const generatedRoot = resolve(root, "registry")
+const builtRoot = resolve(root, "public/r")
+
+const cossComponents = new Set([
+  "accordion",
+  "alert",
+  "alert-dialog",
+  "autocomplete",
+  "avatar",
+  "badge",
+  "breadcrumb",
+  "button",
+  "calendar",
+  "card",
+  "checkbox",
+  "checkbox-group",
+  "collapsible",
+  "combobox",
+  "command",
+  "context-menu",
+  "dialog",
+  "drawer",
+  "empty",
+  "field",
+  "fieldset",
+  "form",
+  "frame",
+  "group",
+  "input",
+  "input-group",
+  "kbd",
+  "label",
+  "menu",
+  "meter",
+  "number-field",
+  "otp-field",
+  "pagination",
+  "popover",
+  "preview-card",
+  "progress",
+  "radio-group",
+  "scroll-area",
+  "select",
+  "separator",
+  "sheet",
+  "sidebar",
+  "skeleton",
+  "slider",
+  "spinner",
+  "switch",
+  "table",
+  "tabs",
+  "textarea",
+  "toast",
+  "toggle",
+  "toggle-group",
+  "toolbar",
+  "tooltip",
+])
+
+const descriptions: Record<string, string> = {
+  "date-picker": "Localized date picker with ISO date-string values.",
+  "date-range-picker": "Localized date-range picker with presets and bounded ranges.",
+  "phone-input": "International phone input with localized country selection.",
+  "settings-toggle": "Immediate-save settings row with loading state.",
+  "use-media-query": "SSR-safe responsive media-query hook.",
+}
 
 if (!checkOnly) {
-  await rm(generatedRoot, { recursive: true, force: true })
+  await Promise.all([
+    rm(generatedRoot, { recursive: true, force: true }),
+    rm(builtRoot, { recursive: true, force: true }),
+  ])
 }
 
 function title(name: string) {
@@ -46,10 +115,18 @@ function packageName(specifier: string) {
   return specifier.startsWith("@") ? parts.slice(0, 2).join("/") : parts[0]
 }
 
-function internalItem(specifier: string) {
-  if (specifier === "@cursare/ui/lib/utils") return "utils"
-  const match = specifier.match(/^@cursare\/ui\/(?:components|hooks)\/(.+)$/)
-  return match?.[1] ?? null
+function registryDependency(specifier: string) {
+  if (specifier === "@cursare/ui/lib/utils") return null
+
+  const match = specifier.match(/^@cursare\/ui\/(components|hooks)\/(.+)$/)
+  if (!match) return null
+
+  const [, directory, name] = match
+  if (directory === "components" && cossComponents.has(name)) {
+    return `@coss/${name}`
+  }
+
+  return `cursare/ui/${name}`
 }
 
 function imports(source: string) {
@@ -66,14 +143,14 @@ function registrySource(source: string) {
 }
 
 async function generatedFile(
-  directory: "components" | "hooks" | "lib" | "styles",
+  directory: "components" | "hooks",
   file: string,
   source: string,
 ) {
   const outputDirectory = directory === "components" ? "ui" : directory
   const relativePath = `registry/${outputDirectory}/${file}`
   const target = resolve(root, relativePath)
-  const content = directory === "styles" ? source : registrySource(source)
+  const content = registrySource(source)
 
   if (checkOnly) {
     const current = await readFile(target, "utf8").catch(() => "")
@@ -90,16 +167,16 @@ async function generatedFile(
 }
 
 async function itemFromFile(
-  directory: "components" | "hooks" | "lib",
+  directory: "components" | "hooks",
   file: string,
 ): Promise<RegistryItem> {
   const name = basename(file, extname(file))
   const source = await readFile(resolve(root, `src/${directory}/${file}`), "utf8")
   const registryPath = await generatedFile(directory, file, source)
   const imported = imports(source)
-  const registryDependencies = [...new Set(imported.map(internalItem).filter(Boolean))]
-    .sort()
-    .map((dependency) => `cursare/ui/${dependency}`)
+  const registryDependencies = [
+    ...new Set(imported.map(registryDependency).filter((item): item is string => Boolean(item))),
+  ].sort()
   const dependencies = [
     ...new Set(
       imported
@@ -110,78 +187,52 @@ async function itemFromFile(
   ]
     .sort()
     .map((dependency) => `${dependency}@${packageJson.dependencies[dependency]}`)
-  const type =
-    directory === "components"
-      ? "registry:ui"
-      : directory === "hooks"
-        ? "registry:hook"
-        : "registry:lib"
-  const target =
-    directory === "components"
-      ? `@ui/${file}`
-      : directory === "hooks"
-        ? `@hooks/${file}`
-        : `@lib/${file}`
+  const type = directory === "components" ? "registry:ui" : "registry:hook"
+  const target = directory === "components" ? `@ui/${file}` : `@hooks/${file}`
 
   return {
     name,
     type,
     title: title(name),
-    description: `${title(name)} for the Cursare UI system.`,
+    description: descriptions[name] ?? `${title(name)} for Cursare applications.`,
     ...(dependencies.length > 0 ? { dependencies } : {}),
     ...(registryDependencies.length > 0 ? { registryDependencies } : {}),
-    files: [
-      {
-        path: registryPath,
-        type,
-        target,
-      },
-    ],
+    files: [{ path: registryPath, type, target }],
   }
 }
 
-async function files(directory: "components" | "hooks" | "lib") {
+async function files(directory: "components" | "hooks") {
   return (await readdir(resolve(root, `src/${directory}`)))
     .filter((file) => /\.(ts|tsx)$/.test(file) && !file.includes(".test."))
     .sort()
 }
 
 const components = await files("components")
+const duplicatedPrimitives = components
+  .map((file) => basename(file, extname(file)))
+  .filter((name) => cossComponents.has(name))
+
+if (duplicatedPrimitives.length > 0) {
+  throw new Error(
+    `COSS primitives must remain upstream: ${duplicatedPrimitives.join(", ")}`,
+  )
+}
+
 const hooks = await files("hooks")
-const libraries = await files("lib")
 const items = await Promise.all([
   ...components.map((file) => itemFromFile("components", file)),
   ...hooks.map((file) => itemFromFile("hooks", file)),
-  ...libraries.map((file) => itemFromFile("lib", file)),
 ])
 const installableItems = items.map((item) => `cursare/ui/${item.name}`)
-const styleSource = await readFile(resolve(root, "src/styles/globals.css"), "utf8")
-const stylePath = await generatedFile("styles", "globals.css", styleSource)
 
-items.push(
-  {
-    name: "style",
-    type: "registry:item",
-    title: "Cursare Style",
-    description: "Cursare's Tailwind CSS v4 design tokens and theme.",
-    files: [
-      {
-        path: stylePath,
-        type: "registry:lib",
-        target: "@lib/cursare-globals.css",
-      },
-    ],
-    docs: "Import the installed cursare-globals.css file from your application stylesheet.",
-  },
-  {
-    name: "ui",
-    type: "registry:item",
-    title: "Cursare UI",
-    description: "The complete Cursare UI primitive collection.",
-    registryDependencies: ["cursare/ui/style", ...installableItems],
-    docs: "Install the complete primitive set and import cursare-globals.css from your application stylesheet.",
-  },
-)
+items.push({
+  name: "ui",
+  type: "registry:item",
+  title: "Cursare UI",
+  description: "The complete Cursare extension set for COSS UI.",
+  registryDependencies: ["@coss/style", ...installableItems],
+  docs: "Installs Cursare's composed components while resolving primitives from the official COSS registry.",
+})
 
 const registry = `${JSON.stringify(
   {

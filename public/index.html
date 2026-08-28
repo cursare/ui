@@ -9,6 +9,8 @@
       body { display: grid; min-height: 100vh; margin: 0; place-items: center; background: #f5f5f4; color: #292524; }
       main { width: min(42rem, calc(100% - 3rem)); }
       code { display: block; overflow-x: auto; border: 1px solid #d6d3d1; border-radius: 0.75rem; background: #fff; padding: 1rem; }
+      ul { display: grid; padding: 0; list-style: none; gap: 0.5rem; }
+      li a { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d3d1; padding: 0.75rem 0; text-decoration: none; }
       a { color: inherit; }
       @media (prefers-color-scheme: dark) {
         body { background: #0c0a09; color: #e7e5e4; }
@@ -20,8 +22,16 @@
     <main>
       <p>Cursare</p>
       <h1>UI registry</h1>
-      <p>Reusable Base UI and Tailwind CSS primitives installable through the shadcn CLI.</p>
-      <code>bunx shadcn@latest add cursare/ui/button</code>
+      <p>Cursare-owned components composed from official COSS UI primitives.</p>
+      <code>bunx shadcn@latest add cursare/ui/date-picker</code>
+      <h2>Components</h2>
+      <ul>
+        <li><a href="./r/date-picker.json"><span>Date picker</span><span>JSON</span></a></li>
+        <li><a href="./r/date-range-picker.json"><span>Date range picker</span><span>JSON</span></a></li>
+        <li><a href="./r/phone-input.json"><span>Phone input</span><span>JSON</span></a></li>
+        <li><a href="./r/settings-toggle.json"><span>Settings toggle</span><span>JSON</span></a></li>
+        <li><a href="./r/use-media-query.json"><span>useMediaQuery</span><span>JSON</span></a></li>
+      </ul>
       <p><a href="https://github.com/cursare/ui">Source and documentation</a></p>
     </main>
   </body>
