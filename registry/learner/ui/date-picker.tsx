@@ -72,10 +72,6 @@ export interface DatePickerProps
   disablePast?: boolean;
 }
 
-/**
- * Coss date picker that keeps the native date field contract: values are always
- * local calendar dates in YYYY-MM-DD form.
- */
 export function DatePicker({
   value = "",
   onValueChange,
