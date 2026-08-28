@@ -27,17 +27,20 @@ bunx shadcn@latest add cursare/ui/ui
 After installing the style item, import `cursare-globals.css` from your application
 stylesheet.
 
-## Package
+## Package source
 
-The same source is prepared for versioned releases as `@cursare/ui`:
+The same source is versioned as a package and can be installed from GitHub:
 
 ```bash
-bun add @cursare/ui
+bun add github:cursare/ui#v0.1.0
 ```
 
 ```tsx
 import { Button } from "@cursare/ui/components/button"
 ```
+
+Publishing `@cursare/ui` to npm is prepared in the release workflow and starts after
+the Cursare npm scope configures the repository's `NPM_TOKEN` secret.
 
 ## Development
 
