@@ -12,11 +12,14 @@
   line-height: var(--learner-ui-line);
 }
 
-/* The question sits on a faint neutral surface so it reads as a distinct
-   (shadowless) panel — separated from transparent code blocks and the reader
-   beneath it. Its inner card (the graded stage) stays flat on top. */
 .content-question {
-  background: var(--learner-neutral-surface);
+  gap: var(--learner-space-6);
+  background: transparent;
+}
+
+[data-learner-component="runtime.practice.quiz"] > .learner-component-header {
+  padding-block-end: var(--learner-space-6);
+  border-block-end: var(--learner-line-width) solid var(--border);
 }
 
 [data-learner-component="runtime.practice.poll"] {
@@ -189,7 +192,7 @@
 
 [data-learner-component="runtime.practice.quiz"] .content-question-card {
   display: grid;
-  gap: var(--learner-space-4);
+  gap: var(--learner-space-6);
   padding: 0;
 }
 
@@ -197,7 +200,6 @@
   display: inline-flex;
   align-items: center;
   gap: var(--learner-space-3);
-  margin-inline-start: auto;
 }
 
 [data-learner-component="runtime.practice.quiz"] .content-question-score {
@@ -257,13 +259,16 @@
 
 [data-learner-component="runtime.practice.quiz"] .content-question-prompt-readonly {
   min-inline-size: 0;
+  max-inline-size: var(--learner-measure-prose);
   color: var(--foreground);
+  font-size: var(--learner-h3-size);
+  line-height: var(--learner-h3-line);
   font-weight: 600;
   overflow-wrap: anywhere;
 }
 
 [data-learner-component="runtime.practice.quiz"] .content-question-options {
-  gap: var(--learner-space-2);
+  gap: var(--learner-space-3);
   padding: 0;
 }
 
@@ -276,6 +281,8 @@
   align-items: center;
   gap: var(--learner-space-3);
   padding: var(--learner-space-3) var(--learner-space-4);
+  border: var(--learner-line-width) solid var(--border);
+  background: var(--background);
   cursor: pointer;
 }
 
@@ -317,11 +324,11 @@
 }
 
 [data-learner-family="practice"] .content-question-head {
-  display: flex;
+  display: inline-flex;
   min-block-size: 0;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: var(--learner-space-3);
   padding: 0;
   border: 0;
@@ -329,13 +336,16 @@
 
 [data-learner-family="practice"] :where(.content-question-option, .content-poll-choice) {
   min-block-size: var(--learner-control-hit);
-  border: 0;
   border-radius: var(--learner-radius-control);
-  background: transparent;
   transition:
     background-color var(--learner-motion-focus) var(--learner-motion-ease),
     color var(--learner-motion-focus) var(--learner-motion-ease),
     transform var(--learner-motion-focus) var(--learner-motion-ease);
+}
+
+[data-learner-component="runtime.practice.quiz"]
+  .content-question-option:not(:has(input:disabled)):hover {
+  background: var(--learner-course-hover);
 }
 
 [data-learner-family="practice"] .content-poll-choice:hover {
@@ -376,7 +386,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--learner-space-3);
-  margin-block-start: var(--learner-space-2);
+  margin-block-start: 0;
   padding-block-start: var(--learner-space-4);
   border: 0;
 }

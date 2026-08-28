@@ -1,5 +1,5 @@
 import { LearnerRoot } from "@/components/cursare/foundation/runtime"
-import { Check, FileText, Lock, Play, Puzzle } from "lucide-react"
+import { Check, Clock3, Lock, Play } from "lucide-react"
 import type { CurriculumJourneyItem } from "./study-projections"
 
 export interface CurriculumJourneyMessages {
@@ -51,10 +51,8 @@ export function CurriculumJourney({
             <Lock aria-hidden />
           ) : item.state === "current" ? (
             <Play aria-hidden />
-          ) : item.kind === "reference" ? (
-            <Puzzle aria-hidden />
           ) : (
-            <FileText aria-hidden />
+            <Clock3 aria-hidden />
           )
           const content = (
             <>

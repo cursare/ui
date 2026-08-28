@@ -58,7 +58,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -331,7 +331,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -374,7 +374,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -427,7 +427,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -472,7 +472,7 @@
         "lucide-react@1.28.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -504,7 +504,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -542,8 +542,8 @@
       "description": "The Cursare document reader with media, practice, polls, quizzes and learner notes.",
       "dependencies": [],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json",
-        "https://cursare.github.io/ui/r/v1/learner-runtime.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json",
+        "https://cursare.github.io/ui/r/v2/learner-runtime.json"
       ],
       "files": [
         {
@@ -566,8 +566,8 @@
       "description": "A server-rendered course player that loads learner-safe published content from Cursare by content id.",
       "dependencies": [],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json",
-        "https://cursare.github.io/ui/r/v1/learner-runtime.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json",
+        "https://cursare.github.io/ui/r/v2/learner-runtime.json"
       ],
       "files": [
         {
@@ -602,7 +602,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -640,7 +640,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -733,7 +733,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -793,7 +793,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json"
       ],
       "files": [
         {
@@ -873,8 +873,8 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v1/learner-foundation.json",
-        "https://cursare.github.io/ui/r/v1/learner-runtime.json"
+        "https://cursare.github.io/ui/r/v2/learner-foundation.json",
+        "https://cursare.github.io/ui/r/v2/learner-runtime.json"
       ],
       "files": [
         {

@@ -279,6 +279,52 @@ export function QuizView({
       icon={ClipboardCheck}
       label={framing.title}
       description={framing.description}
+      actions={
+        showQuestionHeader ? (
+          <div className="content-question-head">
+            {result ? (
+              <span
+                className="content-question-score"
+                data-perfect={result.score === result.total || undefined}
+                role="status"
+                aria-live="polite"
+                aria-label={t("activityResult", { score: result.score, total: result.total })}
+              >
+                {result.score === result.total ? <PartyPopper className="size-4" /> : null}
+                {result.score}/{result.total}
+              </span>
+            ) : completed && saved ? (
+              <span className="content-question-score">
+                {t("questionPoolLastScore", { score: saved.score, total: saved.total })}
+              </span>
+            ) : null}
+            {showQuestionProgress ? (
+              <span className="content-question-status">
+                <span className="content-question-summary-inline" aria-live="polite">
+                  {progressLabel}
+                </span>
+                <span
+                  className="content-question-progress"
+                  role="progressbar"
+                  aria-label={progressLabel}
+                  aria-valuemin={1}
+                  aria-valuemax={questions.length}
+                  aria-valuenow={currentIndex + 1}
+                >
+                  <span
+                    className="content-question-progress-value"
+                    style={
+                      {
+                        "--learner-question-progress": `${((currentIndex + 1) / questions.length) * 100}%`,
+                      } as CSSProperties
+                    }
+                  />
+                </span>
+              </span>
+            ) : null}
+          </div>
+        ) : undefined
+      }
       learnerContract="runtime.practice.quiz"
     >
       <div className="content-quiz-frame">
@@ -291,50 +337,6 @@ export function QuizView({
           aria-busy={submitting}
           tabIndex={-1}
         >
-          {showQuestionHeader ? (
-            <div className="content-question-head">
-              {result ? (
-                <span
-                  className="content-question-score"
-                  data-perfect={result.score === result.total || undefined}
-                  role="status"
-                  aria-live="polite"
-                  aria-label={t("activityResult", { score: result.score, total: result.total })}
-                >
-                  {result.score === result.total ? <PartyPopper className="size-4" /> : null}
-                  {result.score}/{result.total}
-                </span>
-              ) : completed && saved ? (
-                <span className="content-question-score">
-                  {t("questionPoolLastScore", { score: saved.score, total: saved.total })}
-                </span>
-              ) : null}
-              {showQuestionProgress ? (
-                <span className="content-question-status">
-                  <span className="content-question-summary-inline" aria-live="polite">
-                    {progressLabel}
-                  </span>
-                  <span
-                    className="content-question-progress"
-                    role="progressbar"
-                    aria-label={progressLabel}
-                    aria-valuemin={1}
-                    aria-valuemax={questions.length}
-                    aria-valuenow={currentIndex + 1}
-                  >
-                    <span
-                      className="content-question-progress-value"
-                      style={
-                        {
-                          "--learner-question-progress": `${((currentIndex + 1) / questions.length) * 100}%`,
-                        } as CSSProperties
-                      }
-                    />
-                  </span>
-                </span>
-              ) : null}
-            </div>
-          ) : null}
           <div className="content-question-list">
             {currentQuestion ? (
               <fieldset key={currentQuestion.id} className="content-question-item">
