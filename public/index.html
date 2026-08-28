@@ -3,67 +3,252 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Cursare learner-facing React source registry." />
+    <meta
+      name="description"
+      content="Cursare Learner UI — portable course, curriculum and study surfaces distributed as source."
+    />
+    <meta name="theme-color" content="#f5f5ef" />
+    <link rel="icon" href="./favicon-light.svg" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="./favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" href="./site.css" />
     <title>Cursare Learner UI</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-        background: #10110f;
-        color: #f2f2ee;
-      }
-      * { box-sizing: border-box; }
-      body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 85% 0%, #223327 0, transparent 34rem), #10110f; }
-      main { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 96px 0; }
-      header { max-width: 760px; margin-bottom: 64px; }
-      .eyebrow { color: #81c995; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-      h1 { margin: 16px 0 20px; font-size: clamp(48px, 8vw, 88px); line-height: .95; letter-spacing: -.06em; }
-      p { color: #a9aaa4; font-size: 18px; line-height: 1.6; }
-      code { font-family: ui-monospace, SFMono-Regular, monospace; }
-      .command { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 32px; padding: 18px 20px; border: 1px solid #343631; border-radius: 14px; background: #171815; overflow-x: auto; }
-      .command code { color: #dfe7dc; white-space: nowrap; }
-      .badges { display: flex; gap: 8px; margin-top: 18px; }
-      .badge { padding: 6px 10px; border: 1px solid #405345; border-radius: 999px; color: #a6d4b1; font-size: 12px; }
-      h2 { margin: 0 0 20px; font-size: 24px; }
-      #catalog { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-      .item { min-height: 150px; padding: 22px; border: 1px solid #2d2f2b; border-radius: 18px; background: color-mix(in srgb, #191a17 92%, transparent); }
-      .item h3 { margin: 0 0 12px; font-size: 17px; }
-      .item p { margin: 0; font-size: 14px; line-height: 1.5; }
-      .item.internal { opacity: .62; }
-      footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #2d2f2b; color: #777972; font-size: 14px; }
-      a { color: inherit; }
-      @media (max-width: 780px) { main { padding: 56px 0; } #catalog { grid-template-columns: 1fr; } }
-    </style>
   </head>
   <body>
-    <main>
-      <header>
-        <div class="eyebrow">Cursare · public source registry</div>
-        <h1>Learner UI</h1>
-        <p>Portable learner surfaces, the rich course player, and their exact rendering runtime. No dashboard or admin components.</p>
-        <div class="command"><code>bunx shadcn@4.14.0 add https://cursare.github.io/ui/r/blocks.json</code></div>
-        <div class="badges"><span class="badge">shadcn CLI</span><span class="badge">COSS / Base UI</span><span class="badge">source owned</span></div>
-      </header>
-      <section>
-        <h2>Registry catalog</h2>
-        <div id="catalog"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-boundary">
+        <a class="brand-lockup" href="./" aria-label="Cursare Learner UI home">
+          <span class="brand-mark" aria-hidden="true">&#xE000;</span>
+          <span class="brand-name">cursare</span>
+          <span class="brand-product">learner ui</span>
+        </a>
+        <div class="nav-links">
+          <a href="#showcase">Showcase</a>
+          <a href="#registry">Components</a>
+          <a href="#install">Install</a>
+          <a class="github-link" href="https://github.com/cursare/ui">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.57 9.57 0 0 1 12 6.82a9.5 9.5 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section class="hero section-boundary">
+        <div class="hero-copy" data-reveal>
+          <p class="overline"><span></span> Open learner surfaces</p>
+          <h1>The interface between a lesson and its <em>moment.</em></h1>
+          <p class="hero-intro">
+            Course discovery, curriculum, learning and study tools — portable React
+            source with the Cursare experience already built in.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#install">Install the platform <span>↘</span></a>
+            <a class="button button-quiet" href="#showcase">Explore components</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>13</dt><dd>registry items</dd></div>
+            <div><dt>103</dt><dd>owned source files</dd></div>
+            <div><dt>0</dt><dd>dashboard dependencies</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-stage" data-reveal>
+          <div class="stage-note stage-note-top">Live learner surface</div>
+          <div class="player-window">
+            <div class="player-topbar">
+              <div class="player-brand">
+                <span class="brand-mark" aria-hidden="true">&#xE000;</span>
+                <span>cursare</span>
+              </div>
+              <span class="player-course">Designing useful feedback</span>
+              <button class="round-button" type="button" aria-label="More options">•••</button>
+            </div>
+            <div class="player-body">
+              <aside class="lesson-rail" aria-label="Preview lesson navigation">
+                <span class="rail-label">Curriculum</span>
+                <button class="lesson-link is-active" type="button" data-lesson="0">
+                  <span>01</span><strong>Start with evidence</strong>
+                </button>
+                <button class="lesson-link" type="button" data-lesson="1">
+                  <span>02</span><strong>Connect the impact</strong>
+                </button>
+                <button class="lesson-link" type="button" data-lesson="2">
+                  <span>03</span><strong>Agree on one action</strong>
+                </button>
+                <div class="rail-progress"><i></i><span>1 of 3</span></div>
+              </aside>
+              <article class="lesson-canvas">
+                <div class="lesson-number">Lesson <span id="lesson-number">01</span></div>
+                <h2 id="lesson-title">Begin with what you can see.</h2>
+                <p id="lesson-copy">
+                  Describe what happened before interpreting why. Good feedback starts
+                  with evidence another person could recognize.
+                </p>
+                <div class="lesson-callout">
+                  <span class="callout-icon">↳</span>
+                  <div><small>Try this</small><strong id="lesson-prompt">Separate observation from judgment.</strong></div>
+                </div>
+                <div class="lesson-footer">
+                  <span><i></i> Your progress is saved</span>
+                  <button id="next-lesson" type="button">Next lesson <span>→</span></button>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="stage-note stage-note-bottom">course-player · source owned</div>
+        </div>
       </section>
-      <footer><a href="https://github.com/cursare/ui">Source on GitHub</a> · MIT</footer>
+
+      <section class="manifesto-band" aria-label="Product principles">
+        <div class="section-boundary manifesto-inner">
+          <p>Made for the part your learner actually sees.</p>
+          <ul>
+            <li><span>01</span> White-label</li>
+            <li><span>02</span> Accessible</li>
+            <li><span>03</span> Host-agnostic</li>
+            <li><span>04</span> Copy-and-own</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="showcase section-boundary" id="showcase">
+        <header class="section-heading" data-reveal>
+          <div>
+            <p class="overline"><span></span> The learner journey</p>
+            <h2>Not atoms. Complete moments.</h2>
+          </div>
+          <p>
+            Each surface carries its responsive behavior, empty states, interaction
+            contracts and brand-neutral styling.
+          </p>
+        </header>
+
+        <div class="showcase-grid">
+          <article class="showcase-card course-card-showcase" data-reveal>
+            <div class="showcase-meta"><span>course-card</span><a href="#registry">View source ↗</a></div>
+            <div class="course-card-preview">
+              <div class="course-cover">
+                <img src="./assets/learner-cover.webp" alt="Colorful retro computers and game hardware" />
+                <span class="course-chip">New</span>
+              </div>
+              <div class="course-details">
+                <div class="publisher"><span class="publisher-mark">OB</span> Org Business</div>
+                <h3>Build a product people remember</h3>
+                <p>8 lessons · 2h 15min</p>
+                <div class="course-progress"><span><i></i></span><small>32%</small></div>
+              </div>
+            </div>
+            <p class="showcase-caption">Discovery that already understands enrollment and progress.</p>
+          </article>
+
+          <article class="showcase-card journey-showcase" data-reveal>
+            <div class="showcase-meta"><span>curriculum-journey</span><a href="#registry">View source ↗</a></div>
+            <div class="journey-preview">
+              <div class="journey-header"><span>Course journey</span><strong>3 / 6</strong></div>
+              <ol>
+                <li class="is-complete"><span>✓</span><div><small>Module 01</small><strong>Welcome to the course</strong></div><em>12m</em></li>
+                <li class="is-complete"><span>✓</span><div><small>Module 02</small><strong>Frame the opportunity</strong></div><em>24m</em></li>
+                <li class="is-current"><span>3</span><div><small>Module 03</small><strong>Prototype the moment</strong></div><em>38m</em></li>
+                <li><span>4</span><div><small>Module 04</small><strong>Learn from the signal</strong></div><em>31m</em></li>
+              </ol>
+            </div>
+            <p class="showcase-caption">A curriculum that feels like forward motion, not a file tree.</p>
+          </article>
+
+          <article class="showcase-card intake-showcase" data-reveal>
+            <div class="showcase-meta"><span>intake-form</span><a href="#registry">View source ↗</a></div>
+            <div class="intake-preview">
+              <div class="intake-count">02 <span>/ 04</span></div>
+              <p>What would make this course worthwhile for you?</p>
+              <label><input type="radio" name="preview-intake" checked /> A project I can apply now</label>
+              <label><input type="radio" name="preview-intake" /> A clearer foundation</label>
+              <button type="button">Continue <span>→</span></button>
+            </div>
+            <p class="showcase-caption">Structured learner context without coupling to your backend.</p>
+          </article>
+
+          <article class="showcase-card tools-showcase" data-reveal>
+            <div class="showcase-meta"><span>study-tools</span><a href="#registry">View source ↗</a></div>
+            <div class="tools-preview">
+              <div class="tools-nav">
+                <button class="is-active" type="button">Notes <span>2</span></button>
+                <button type="button">Highlights</button>
+              </div>
+              <div class="note-card"><small>Lesson 01 · 04:32</small><p>Evidence is something another person could recognize.</p></div>
+              <div class="note-compose"><span>Write a note…</span><button type="button">＋</button></div>
+            </div>
+            <p class="showcase-caption">Study belongs beside the lesson, not in another application.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="install-section" id="install">
+        <div class="section-boundary install-layout">
+          <div class="install-copy" data-reveal>
+            <p class="overline"><span></span> One command away</p>
+            <h2>Own the source.<br />Keep the experience.</h2>
+            <p>
+              Install the complete learner platform or select only the surfaces your
+              product needs. No runtime package and no Cursare backend dependency.
+            </p>
+            <div class="compatibility">
+              <span>shadcn CLI</span><span>COSS / Base UI</span><span>React 19</span><span>Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="terminal" data-reveal>
+            <div class="terminal-bar"><span><i></i><i></i><i></i></span><small>terminal</small></div>
+            <div class="terminal-content">
+              <p><span class="prompt">$</span> <span class="command-text">bunx shadcn@4.14.0 add \\</span></p>
+              <p class="command-indent">https://cursare.github.io/ui/r/blocks.json</p>
+              <div class="terminal-output">
+                <p><span>✓</span> Checking registry</p>
+                <p><span>✓</span> Installing dependencies</p>
+                <p><span>✓</span> Added 103 source files</p>
+              </div>
+              <button class="copy-command" type="button" data-copy="bunx shadcn@4.14.0 add https://cursare.github.io/ui/r/blocks.json">Copy command</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="registry-section section-boundary" id="registry">
+        <header class="section-heading" data-reveal>
+          <div>
+            <p class="overline"><span></span> Registry catalog</p>
+            <h2>Choose the surface.</h2>
+          </div>
+          <p>Focused items stay lightweight. Foundation and runtime arrive only when a surface needs them.</p>
+        </header>
+        <div class="registry-list" id="registry-list" aria-live="polite">
+          <div class="registry-loading">Loading the public registry…</div>
+        </div>
+        <div class="registry-internals" id="registry-internals"></div>
+      </section>
     </main>
-    <script type="module">
-      const registry = await fetch("./r/registry.json").then((response) => response.json())
-      const internal = new Set(["learner-foundation", "learner-runtime"])
-      const catalog = document.querySelector("#catalog")
-      for (const item of registry.items) {
-        const card = document.createElement("article")
-        card.className = `item${internal.has(item.name) ? " internal" : ""}`
-        const title = document.createElement("h3")
-        title.textContent = item.name
-        const description = document.createElement("p")
-        description.textContent = internal.has(item.name) ? "Installed automatically when required." : item.description
-        card.append(title, description)
-        catalog.append(card)
-      }
-    </script>
+
+    <footer class="site-footer">
+      <div class="section-boundary footer-inner">
+        <div>
+          <a class="brand-lockup footer-brand" href="./">
+            <span class="brand-mark" aria-hidden="true">&#xE000;</span><span class="brand-name">cursare</span>
+          </a>
+          <p>Interfaces for learning in public.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/cursare/ui">GitHub</a>
+          <a href="https://github.com/cursare/ui/tree/main/registry/learner">Browse source</a>
+          <a href="https://github.com/cursare/ui/releases/latest">Latest release</a>
+          <a href="./fonts/OFL.txt">Font license</a>
+        </div>
+        <span class="footer-note">Cursare Learner UI · MIT</span>
+      </div>
+    </footer>
+
+    <script type="module" src="./site.js"></script>
   </body>
 </html>
