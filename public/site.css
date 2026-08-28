@@ -32,8 +32,8 @@
 	--paper: #f5f5ef;
 	--paper-deep: #ebece5;
 	--line: #d5d6cf;
-	--green: #b8ff65;
-	--green-deep: #35553a;
+	--signal: #f1f0ea;
+	--signal-deep: #3d3e39;
 	--dark: #171815;
 	--dark-soft: #242520;
 	--white: #fbfbf7;
@@ -90,8 +90,8 @@ button {
 	z-index: 100;
 	padding: 10px 14px;
 	border-radius: 10px;
-	background: var(--green);
-	color: var(--ink);
+	background: var(--ink);
+	color: var(--white);
 	transform: translateY(-160%);
 }
 
@@ -210,8 +210,8 @@ button {
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background: var(--green-deep);
-	box-shadow: 0 0 0 4px rgba(53, 85, 58, 0.12);
+	background: var(--signal-deep);
+	box-shadow: 0 0 0 4px rgba(23, 24, 21, 0.09);
 }
 
 .hero h1 {
@@ -224,7 +224,7 @@ button {
 }
 
 .hero h1 em {
-	color: var(--green-deep);
+	color: var(--signal-deep);
 	font-style: normal;
 }
 
@@ -272,7 +272,7 @@ button {
 }
 
 .button-primary span {
-	color: var(--green);
+	color: var(--signal);
 }
 
 .button-quiet {
@@ -314,7 +314,7 @@ button {
 	inset: -5% 3% 0 8%;
 	z-index: -1;
 	border-radius: 50%;
-	background: rgba(184, 255, 101, 0.24);
+	background: rgba(23, 24, 21, 0.09);
 	content: "";
 	filter: blur(80px);
 }
@@ -341,7 +341,7 @@ button {
 	width: 7px;
 	height: 7px;
 	border-radius: 50%;
-	background: #59b36a;
+	background: var(--ink);
 	content: "";
 }
 
@@ -459,7 +459,7 @@ button {
 }
 
 .lesson-link.is-active span {
-	color: var(--green);
+	color: var(--signal);
 }
 
 .rail-progress {
@@ -486,7 +486,7 @@ button {
 	inset: 0 auto 0 0;
 	width: var(--lesson-progress, 33.333%);
 	border-radius: inherit;
-	background: var(--green);
+	background: var(--signal);
 	content: "";
 	transition: width 280ms ease;
 }
@@ -499,14 +499,14 @@ button {
 	background:
 		radial-gradient(
 			circle at 80% 10%,
-			rgba(184, 255, 101, 0.06),
+			rgba(255, 255, 255, 0.045),
 			transparent 180px
 		),
 		#1b1c18;
 }
 
 .lesson-number {
-	color: var(--green);
+	color: var(--signal);
 	font-size: 10px;
 	font-weight: 600;
 	letter-spacing: 0.12em;
@@ -549,7 +549,7 @@ button {
 	height: 38px;
 	place-items: center;
 	border-radius: 10px;
-	background: var(--green);
+	background: var(--signal);
 	color: var(--ink);
 	font-size: 20px;
 }
@@ -592,7 +592,7 @@ button {
 	width: 6px;
 	height: 6px;
 	border-radius: 50%;
-	background: #66bd74;
+	background: #85877f;
 }
 
 .lesson-footer button {
@@ -612,7 +612,8 @@ button {
 
 .manifesto-band {
 	border-block: 1px solid var(--ink);
-	background: var(--green);
+	background: var(--ink);
+	color: var(--white);
 }
 
 .manifesto-inner {
@@ -647,7 +648,7 @@ button {
 	min-height: 62px;
 	justify-content: center;
 	padding-left: 24px;
-	border-left: 1px solid rgba(23, 24, 21, 0.22);
+	border-left: 1px solid rgba(255, 255, 255, 0.18);
 	font-size: 14px;
 	font-weight: 600;
 }
@@ -712,7 +713,7 @@ button {
 	z-index: -1;
 	background: radial-gradient(
 		circle at 50% 20%,
-		rgba(184, 255, 101, 0.14),
+		rgba(23, 24, 21, 0.06),
 		transparent 46%
 	);
 	content: "";
@@ -798,7 +799,7 @@ button {
 	z-index: 1;
 	padding: 6px 10px;
 	border-radius: 999px;
-	background: var(--green);
+	background: var(--signal);
 	font-size: 10px;
 	font-weight: 600;
 }
@@ -861,7 +862,7 @@ button {
 	width: 32%;
 	height: 100%;
 	border-radius: inherit;
-	background: var(--green-deep);
+	background: var(--signal-deep);
 }
 
 .course-progress small {
@@ -889,7 +890,7 @@ button {
 }
 
 .journey-header strong {
-	color: var(--green);
+	color: var(--signal);
 	font-weight: 500;
 }
 
@@ -960,8 +961,8 @@ button {
 }
 
 .journey-preview li.is-complete > span {
-	border-color: var(--green-deep);
-	background: var(--green-deep);
+	border-color: var(--signal-deep);
+	background: var(--signal-deep);
 }
 
 .journey-preview li.is-current {
@@ -972,8 +973,8 @@ button {
 }
 
 .journey-preview li.is-current > span {
-	border-color: var(--green);
-	color: var(--green);
+	border-color: var(--signal);
+	color: var(--signal);
 }
 
 .intake-preview {
@@ -981,19 +982,19 @@ button {
 	margin: 18px auto 34px;
 	padding: 30px;
 	border-radius: 25px;
-	background: #e8f2dc;
-	box-shadow: 0 22px 50px rgba(53, 85, 58, 0.13);
+	background: #e8e7e1;
+	box-shadow: 0 22px 50px rgba(23, 24, 21, 0.13);
 }
 
 .intake-count {
-	color: var(--green-deep);
+	color: var(--signal-deep);
 	font-size: 32px;
 	font-weight: 600;
 	letter-spacing: -0.05em;
 }
 
 .intake-count span {
-	color: #8c9b8a;
+	color: #92938d;
 	font-size: 13px;
 }
 
@@ -1011,14 +1012,14 @@ button {
 	align-items: center;
 	margin-top: 8px;
 	padding: 13px;
-	border: 1px solid rgba(53, 85, 58, 0.16);
+	border: 1px solid rgba(23, 24, 21, 0.14);
 	border-radius: 12px;
 	background: rgba(255, 255, 255, 0.48);
 	font-size: 11px;
 }
 
 .intake-preview input {
-	accent-color: var(--green-deep);
+	accent-color: var(--signal-deep);
 }
 
 .intake-preview button {
@@ -1031,7 +1032,7 @@ button {
 	padding-inline: 16px;
 	border: 0;
 	border-radius: 12px;
-	background: var(--green-deep);
+	background: var(--signal-deep);
 	color: var(--white);
 	font-size: 11px;
 	font-weight: 600;
@@ -1077,7 +1078,7 @@ button {
 	height: 17px;
 	place-items: center;
 	border-radius: 50%;
-	background: var(--green);
+	background: var(--paper-deep);
 	font-size: 8px;
 }
 
@@ -1130,7 +1131,7 @@ button {
 	background:
 		radial-gradient(
 			circle at 5% 100%,
-			rgba(184, 255, 101, 0.13),
+			rgba(255, 255, 255, 0.07),
 			transparent 420px
 		),
 		var(--dark);
@@ -1150,7 +1151,7 @@ button {
 }
 
 .install-copy .overline span {
-	background: var(--green);
+	background: var(--signal);
 }
 
 .install-copy h2 {
@@ -1202,7 +1203,7 @@ button {
 }
 
 .terminal-bar i:first-child {
-	background: var(--green);
+	background: var(--signal);
 }
 
 .terminal-bar small {
@@ -1226,7 +1227,7 @@ button {
 
 .terminal-content .prompt,
 .terminal-output span {
-	color: var(--green);
+	color: var(--signal);
 }
 
 .command-indent {
