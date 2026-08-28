@@ -74,7 +74,7 @@ try {
 
   const installed = await readFile(resolve(fixture, "src/components/ui/button.tsx"), "utf8")
   if (!installed.includes('from "@/lib/utils"')) {
-    throw new Error("Registry installation did not rewrite package aliases.")
+    throw new Error(`Registry installation did not rewrite package aliases.\n${installed}`)
   }
 } finally {
   await rm(fixture, { recursive: true, force: true })

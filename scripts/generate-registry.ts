@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile } from "node:fs/promises"
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises"
 import { basename, dirname, extname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 
@@ -28,6 +28,11 @@ const packageJson = JSON.parse(
   await readFile(resolve(root, "package.json"), "utf8"),
 ) as PackageJson
 const checkOnly = process.argv.includes("--check")
+const generatedRoot = resolve(root, "registry")
+
+if (!checkOnly) {
+  await rm(generatedRoot, { recursive: true, force: true })
+}
 
 function title(name: string) {
   return name
@@ -53,12 +58,44 @@ function imports(source: string) {
   )
 }
 
+function registrySource(source: string) {
+  return source
+    .replaceAll("@cursare/ui/components/", "@/components/ui/")
+    .replaceAll("@cursare/ui/hooks/", "@/hooks/")
+    .replaceAll("@cursare/ui/lib/", "@/lib/")
+}
+
+async function generatedFile(
+  directory: "components" | "hooks" | "lib" | "styles",
+  file: string,
+  source: string,
+) {
+  const outputDirectory = directory === "components" ? "ui" : directory
+  const relativePath = `registry/${outputDirectory}/${file}`
+  const target = resolve(root, relativePath)
+  const content = directory === "styles" ? source : registrySource(source)
+
+  if (checkOnly) {
+    const current = await readFile(target, "utf8").catch(() => "")
+    if (current !== content) {
+      console.error(`${relativePath} is stale. Run bun run registry:generate.`)
+      process.exitCode = 1
+    }
+  } else {
+    await mkdir(dirname(target), { recursive: true })
+    await writeFile(target, content)
+  }
+
+  return relativePath
+}
+
 async function itemFromFile(
   directory: "components" | "hooks" | "lib",
   file: string,
 ): Promise<RegistryItem> {
   const name = basename(file, extname(file))
   const source = await readFile(resolve(root, `src/${directory}/${file}`), "utf8")
+  const registryPath = await generatedFile(directory, file, source)
   const imported = imports(source)
   const registryDependencies = [...new Set(imported.map(internalItem).filter(Boolean))]
     .sort()
@@ -95,7 +132,7 @@ async function itemFromFile(
     ...(registryDependencies.length > 0 ? { registryDependencies } : {}),
     files: [
       {
-        path: `src/${directory}/${file}`,
+        path: registryPath,
         type,
         target,
       },
@@ -118,6 +155,8 @@ const items = await Promise.all([
   ...libraries.map((file) => itemFromFile("lib", file)),
 ])
 const installableItems = items.map((item) => `cursare/ui/${item.name}`)
+const styleSource = await readFile(resolve(root, "src/styles/globals.css"), "utf8")
+const stylePath = await generatedFile("styles", "globals.css", styleSource)
 
 items.push(
   {
@@ -127,7 +166,7 @@ items.push(
     description: "Cursare's Tailwind CSS v4 design tokens and theme.",
     files: [
       {
-        path: "src/styles/globals.css",
+        path: stylePath,
         type: "registry:lib",
         target: "@lib/cursare-globals.css",
       },
