@@ -1,0 +1,78 @@
+{
+  "name": "@cursare/ui",
+  "version": "0.1.0",
+  "description": "Cursare's reusable React UI primitives, built on Base UI and Tailwind CSS.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Cursare",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursare/ui.git"
+  },
+  "homepage": "https://cursare.github.io/ui/",
+  "bugs": {
+    "url": "https://github.com/cursare/ui/issues"
+  },
+  "keywords": [
+    "base-ui",
+    "coss",
+    "react",
+    "shadcn",
+    "tailwindcss",
+    "ui"
+  ],
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "sideEffects": [
+    "./src/styles/*.css"
+  ],
+  "exports": {
+    "./globals.css": "./src/styles/globals.css",
+    "./scoped-globals.css": "./src/styles/scoped-globals.css",
+    "./lib/*": "./src/lib/*.ts",
+    "./components/*": "./src/components/*.tsx",
+    "./hooks/*": "./src/hooks/*.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "check": "bun run typecheck && bun test && bun run registry:check && bun run build",
+    "registry:build": "bun run registry:generate && shadcn build registry.json --output public/r",
+    "registry:check": "bun scripts/generate-registry.ts --check && shadcn registry validate registry.json",
+    "registry:generate": "bun scripts/generate-registry.ts",
+    "registry:smoke": "bun scripts/smoke-registry.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.6.0",
+    "@daypicker/react": "10.0.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "libphonenumber-js": "1.13.11",
+    "lucide-react": "^1.28.0",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "shadcn": "4.16.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "bun@1.3.14"
+}

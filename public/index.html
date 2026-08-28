@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cursare UI Registry</title>
+    <style>
+      :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; }
+      body { display: grid; min-height: 100vh; margin: 0; place-items: center; background: #f5f5f4; color: #292524; }
+      main { width: min(42rem, calc(100% - 3rem)); }
+      code { display: block; overflow-x: auto; border: 1px solid #d6d3d1; border-radius: 0.75rem; background: #fff; padding: 1rem; }
+      a { color: inherit; }
+      @media (prefers-color-scheme: dark) {
+        body { background: #0c0a09; color: #e7e5e4; }
+        code { border-color: #44403c; background: #1c1917; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>Cursare</p>
+      <h1>UI registry</h1>
+      <p>Reusable Base UI and Tailwind CSS primitives installable through the shadcn CLI.</p>
+      <code>bunx shadcn@latest add cursare/ui/button</code>
+      <p><a href="https://github.com/cursare/ui">Source and documentation</a></p>
+    </main>
+  </body>
+</html>

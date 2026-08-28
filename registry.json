@@ -1,0 +1,1274 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "cursare",
+  "homepage": "https://cursare.github.io/ui/",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Accordion for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Alert Dialog for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Alert for the Cursare UI system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete",
+      "type": "registry:ui",
+      "title": "Autocomplete",
+      "description": "Autocomplete for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/input",
+        "cursare/ui/scroll-area",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/autocomplete.tsx",
+          "type": "registry:ui",
+          "target": "@ui/autocomplete.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Avatar for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Badge for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Breadcrumb for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "cursare/ui/spinner",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Calendar for the Cursare UI system.",
+      "dependencies": [
+        "@daypicker/react@10.0.1",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-group",
+      "type": "registry:ui",
+      "title": "Checkbox Group",
+      "description": "Checkbox Group for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/checkbox-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Checkbox for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Collapsible for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Combobox for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/input",
+        "cursare/ui/scroll-area",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Command for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/autocomplete",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Context Menu for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/context-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Date Picker for the Cursare UI system.",
+      "dependencies": [
+        "@daypicker/react@10.0.1",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/button",
+        "cursare/ui/calendar",
+        "cursare/ui/popover",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/date-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-range-picker",
+      "type": "registry:ui",
+      "title": "Date Range Picker",
+      "description": "Date Range Picker for the Cursare UI system.",
+      "dependencies": [
+        "@daypicker/react@10.0.1",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/button",
+        "cursare/ui/calendar",
+        "cursare/ui/date-picker",
+        "cursare/ui/popover",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/date-range-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/date-range-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Dialog for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/button",
+        "cursare/ui/scroll-area",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Drawer for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/button",
+        "cursare/ui/scroll-area",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/drawer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Empty for the Cursare UI system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/empty.tsx",
+          "type": "registry:ui",
+          "target": "@ui/empty.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Field for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fieldset",
+      "type": "registry:ui",
+      "title": "Fieldset",
+      "description": "Fieldset for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/fieldset.tsx",
+          "type": "registry:ui",
+          "target": "@ui/fieldset.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Form for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "files": [
+        {
+          "path": "src/components/form.tsx",
+          "type": "registry:ui",
+          "target": "@ui/form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "frame",
+      "type": "registry:ui",
+      "title": "Frame",
+      "description": "Frame for the Cursare UI system.",
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/frame.tsx",
+          "type": "registry:ui",
+          "target": "@ui/frame.tsx"
+        }
+      ]
+    },
+    {
+      "name": "group",
+      "type": "registry:ui",
+      "title": "Group",
+      "description": "Group for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "cursare/ui/separator",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Input Group for the Cursare UI system.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "cursare/ui/input",
+        "cursare/ui/textarea",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Input for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Kbd for the Cursare UI system.",
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Label for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Menu for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "meter",
+      "type": "registry:ui",
+      "title": "Meter",
+      "description": "Meter for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/meter.tsx",
+          "type": "registry:ui",
+          "target": "@ui/meter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "number-field",
+      "type": "registry:ui",
+      "title": "Number Field",
+      "description": "Number Field for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/label",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/number-field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/number-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "otp-field",
+      "type": "registry:ui",
+      "title": "Otp Field",
+      "description": "Otp Field for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/separator",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/otp-field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/otp-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/button",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone Input",
+      "description": "Phone Input for the Cursare UI system.",
+      "dependencies": [
+        "libphonenumber-js@1.13.11",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/input",
+        "cursare/ui/popover",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/phone-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/phone-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Popover for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "preview-card",
+      "type": "registry:ui",
+      "title": "Preview Card",
+      "description": "Preview Card for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/preview-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/preview-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Progress for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Radio Group for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Scroll Area for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Separator for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-toggle",
+      "type": "registry:ui",
+      "title": "Settings Toggle",
+      "description": "Settings Toggle for the Cursare UI system.",
+      "registryDependencies": [
+        "cursare/ui/frame",
+        "cursare/ui/skeleton",
+        "cursare/ui/switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/settings-toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/settings-toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Sheet for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/button",
+        "cursare/ui/scroll-area",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Sidebar for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/button",
+        "cursare/ui/input",
+        "cursare/ui/scroll-area",
+        "cursare/ui/separator",
+        "cursare/ui/sheet",
+        "cursare/ui/skeleton",
+        "cursare/ui/tooltip",
+        "cursare/ui/use-media-query",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Skeleton for the Cursare UI system.",
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Slider for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Spinner for the Cursare UI system.",
+      "dependencies": [
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Switch for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Table for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Textarea for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Toast for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "lucide-react@^1.28.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/button",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Toggle Group for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "cursare/ui/separator",
+        "cursare/ui/toggle",
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Toggle for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "description": "Toolbar for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/toolbar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Tooltip for the Cursare UI system.",
+      "dependencies": [
+        "@base-ui/react@1.6.0"
+      ],
+      "registryDependencies": [
+        "cursare/ui/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-media-query",
+      "type": "registry:hook",
+      "title": "Use Media Query",
+      "description": "Use Media Query for the Cursare UI system.",
+      "files": [
+        {
+          "path": "src/hooks/use-media-query.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-media-query.ts"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "Utils for the Cursare UI system.",
+      "dependencies": [
+        "clsx@^2.1.1",
+        "tailwind-merge@^3.6.0"
+      ],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "style",
+      "type": "registry:item",
+      "title": "Cursare Style",
+      "description": "Cursare's Tailwind CSS v4 design tokens and theme.",
+      "files": [
+        {
+          "path": "src/styles/globals.css",
+          "type": "registry:lib",
+          "target": "@lib/cursare-globals.css"
+        }
+      ],
+      "docs": "Import the installed cursare-globals.css file from your application stylesheet."
+    },
+    {
+      "name": "ui",
+      "type": "registry:item",
+      "title": "Cursare UI",
+      "description": "The complete Cursare UI primitive collection.",
+      "registryDependencies": [
+        "cursare/ui/style",
+        "cursare/ui/accordion",
+        "cursare/ui/alert-dialog",
+        "cursare/ui/alert",
+        "cursare/ui/autocomplete",
+        "cursare/ui/avatar",
+        "cursare/ui/badge",
+        "cursare/ui/breadcrumb",
+        "cursare/ui/button",
+        "cursare/ui/calendar",
+        "cursare/ui/card",
+        "cursare/ui/checkbox-group",
+        "cursare/ui/checkbox",
+        "cursare/ui/collapsible",
+        "cursare/ui/combobox",
+        "cursare/ui/command",
+        "cursare/ui/context-menu",
+        "cursare/ui/date-picker",
+        "cursare/ui/date-range-picker",
+        "cursare/ui/dialog",
+        "cursare/ui/drawer",
+        "cursare/ui/empty",
+        "cursare/ui/field",
+        "cursare/ui/fieldset",
+        "cursare/ui/form",
+        "cursare/ui/frame",
+        "cursare/ui/group",
+        "cursare/ui/input-group",
+        "cursare/ui/input",
+        "cursare/ui/kbd",
+        "cursare/ui/label",
+        "cursare/ui/menu",
+        "cursare/ui/meter",
+        "cursare/ui/number-field",
+        "cursare/ui/otp-field",
+        "cursare/ui/pagination",
+        "cursare/ui/phone-input",
+        "cursare/ui/popover",
+        "cursare/ui/preview-card",
+        "cursare/ui/progress",
+        "cursare/ui/radio-group",
+        "cursare/ui/scroll-area",
+        "cursare/ui/select",
+        "cursare/ui/separator",
+        "cursare/ui/settings-toggle",
+        "cursare/ui/sheet",
+        "cursare/ui/sidebar",
+        "cursare/ui/skeleton",
+        "cursare/ui/slider",
+        "cursare/ui/spinner",
+        "cursare/ui/switch",
+        "cursare/ui/table",
+        "cursare/ui/tabs",
+        "cursare/ui/textarea",
+        "cursare/ui/toast",
+        "cursare/ui/toggle-group",
+        "cursare/ui/toggle",
+        "cursare/ui/toolbar",
+        "cursare/ui/tooltip",
+        "cursare/ui/use-media-query",
+        "cursare/ui/utils"
+      ],
+      "docs": "Install the complete primitive set and import cursare-globals.css from your application stylesheet."
+    }
+  ]
+}
