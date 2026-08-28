@@ -3,7 +3,7 @@ import {
   isVideoProvider,
   resolveVideoUrl,
   type VideoProvider,
-} from "@/components/cursare/foundation/model"
+} from "@/components/cursare/foundation/model/learner-runtime"
 
 export interface VideoPlaybackSource {
   provider: VideoProvider

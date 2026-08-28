@@ -11,6 +11,7 @@ const itemNames = [
   "curriculum-journey",
   "enrolled-course-home",
   "course-player",
+  "cursare-course-player",
   "course-shell",
   "course-outline",
   "study-tools",
@@ -34,7 +35,6 @@ type RegistryItem = {
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const publicRoot = resolve(root, "public/r")
 const sourceRoot = resolve(root, "registry/learner")
-const publicDependencyBase = "https://cursare.github.io/ui/r/v0/"
 
 async function filesRecursively(directory: string): Promise<string[]> {
   const files: string[] = []
@@ -56,6 +56,12 @@ const actualNames = registry.items.map((item) => item.name).sort()
 if (JSON.stringify(actualNames) !== JSON.stringify(expectedNames)) {
   throw new Error(`Unexpected public catalog: ${actualNames.join(", ")}`)
 }
+const currentDependency = registry.items
+  .flatMap((item) => item.registryDependencies ?? [])
+  .find((dependency) => /\/r\/v\d+\//.test(dependency))
+const currentRelease = currentDependency?.match(/\/r\/(v\d+)\//)?.[1]
+if (!currentRelease) throw new Error("Could not resolve the current immutable registry release.")
+const publicDependencyBase = `https://cursare.github.io/ui/r/${currentRelease}/`
 if ((await readFile(resolve(root, "registry.json"), "utf8")) !== registryRaw) {
   throw new Error("Root registry.json differs from the hosted catalog.")
 }
@@ -69,8 +75,10 @@ if (JSON.stringify(stableFiles) !== JSON.stringify(expectedFiles)) {
 const sources = new Map<string, string>()
 for (const name of itemNames) {
   const stableRaw = await readFile(resolve(publicRoot, `${name}.json`), "utf8")
-  const versionedRaw = await readFile(resolve(publicRoot, "v0", `${name}.json`), "utf8")
-  if (stableRaw !== versionedRaw) throw new Error(`${name} differs from its v0 artifact.`)
+  const versionedRaw = await readFile(resolve(publicRoot, currentRelease, `${name}.json`), "utf8")
+  if (stableRaw !== versionedRaw) {
+    throw new Error(`${name} differs from its ${currentRelease} artifact.`)
+  }
 
   const item = JSON.parse(stableRaw) as RegistryItem
   if (item.name !== name || !item.$schema.includes("shadcn.com/schema/registry-item.json")) {
@@ -116,6 +124,9 @@ if (!blocks.dependencies.some((dependency) => dependency.startsWith("@base-ui/re
 }
 if (!blocks.files.some((file) => file.target.endsWith("/course-player.tsx"))) {
   throw new Error("The complete learner aggregate is missing course-player.")
+}
+if (!blocks.files.some((file) => file.target.endsWith("/cursare-course-player.tsx"))) {
+  throw new Error("The complete learner aggregate is missing the Cursare API adapter.")
 }
 
 console.log(`Validated ${itemNames.length} learner items and ${sources.size} source files.`)

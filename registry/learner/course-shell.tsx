@@ -4,7 +4,7 @@ import {
   type ContentImageAttribution,
   type ContentImageFocalPoint,
   themeVars,
-} from "@/components/cursare/foundation/model"
+} from "@/components/cursare/foundation/model/learner-runtime"
 import { LearnerRoot } from "@/components/cursare/foundation/runtime"
 import type { ReactNode } from "react"
 import { CourseHero } from "./course-hero"

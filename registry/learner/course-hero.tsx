@@ -1,7 +1,7 @@
 import type {
   ContentImageFocalPoint,
   ContentImageAttribution as CoverAttribution,
-} from "@/components/cursare/foundation/model"
+} from "@/components/cursare/foundation/model/learner-runtime"
 import { ContentCoverAttribution, ContentCoverMedia, LearnerRoot } from "@/components/cursare/foundation/runtime"
 import type { CSSProperties } from "react"
 

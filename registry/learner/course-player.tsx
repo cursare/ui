@@ -1,6 +1,6 @@
 "use client"
 
-import { type ParsedContentDocument, themeVars } from "@/components/cursare/foundation/model"
+import { type ParsedContentDocument, themeVars } from "@/components/cursare/foundation/model/learner-runtime"
 import {
   ContentReader,
   type EditorMessages,

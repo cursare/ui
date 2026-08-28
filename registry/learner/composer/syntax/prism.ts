@@ -1,4 +1,4 @@
-import { CODE_LANGUAGES, normalizeCodeLanguage } from "@/components/cursare/foundation/model"
+import { CODE_LANGUAGES, normalizeCodeLanguage } from "@/components/cursare/foundation/model/learner-runtime"
 import Prism from "prismjs"
 import "prismjs/components/prism-bash"
 import "prismjs/components/prism-c"

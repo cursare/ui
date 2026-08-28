@@ -11,6 +11,7 @@ const itemNames = [
   "curriculum-journey",
   "enrolled-course-home",
   "course-player",
+  "cursare-course-player",
   "course-shell",
   "course-outline",
   "study-tools",
@@ -41,8 +42,8 @@ const sourceRoot = await stat(directRegistry)
 
 const publicRoot = resolve(root, "public/r")
 const sourceOutput = resolve(root, "registry/learner")
-const canonicalBase = "https://cursare.com/r/v0/"
-const publicBase = "https://cursare.github.io/ui/r/v0/"
+const canonicalBase = "https://cursare.com/r/"
+const publicBase = "https://cursare.github.io/ui/r/"
 
 function publicArtifact(raw: string): string {
   const artifact = JSON.parse(raw) as RegistryItem
@@ -73,12 +74,13 @@ function sourcePath(target: string): string {
 
 await rm(publicRoot, { recursive: true, force: true })
 await rm(sourceOutput, { recursive: true, force: true })
-await mkdir(resolve(publicRoot, "v0"), { recursive: true })
+await mkdir(publicRoot, { recursive: true })
 await mkdir(sourceOutput, { recursive: true })
 
 const expectedFiles = new Set(["registry.json", ...itemNames.map((name) => `${name}.json`)])
+const sourceEntries = await readdir(sourceRoot, { withFileTypes: true })
 const actualFiles = new Set(
-  (await readdir(sourceRoot, { withFileTypes: true }))
+  sourceEntries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
     .map((entry) => entry.name),
 )
@@ -89,7 +91,19 @@ for (const file of expectedFiles) {
 for (const file of [...expectedFiles].sort()) {
   const artifact = publicArtifact(await readFile(resolve(sourceRoot, file), "utf8"))
   await writeFile(resolve(publicRoot, file), artifact)
-  await writeFile(resolve(publicRoot, "v0", file), artifact)
+}
+
+for (const release of sourceEntries
+  .filter((entry) => entry.isDirectory() && /^v\d+$/.test(entry.name))
+  .map((entry) => entry.name)
+  .sort()) {
+  const sourceRelease = resolve(sourceRoot, release)
+  const publicRelease = resolve(publicRoot, release)
+  await mkdir(publicRelease, { recursive: true })
+  for (const file of (await readdir(sourceRelease)).filter((name) => name.endsWith(".json")).sort()) {
+    const artifact = publicArtifact(await readFile(resolve(sourceRelease, file), "utf8"))
+    await writeFile(resolve(publicRelease, file), artifact)
+  }
 }
 await cp(resolve(publicRoot, "registry.json"), resolve(root, "registry.json"))
 

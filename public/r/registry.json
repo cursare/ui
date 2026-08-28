@@ -9,94 +9,14 @@
       "title": "Learner Foundation",
       "description": "Shared document model, themes and learner component metadata for Cursare blocks.",
       "dependencies": [
-        "react@19.0.0",
-        "remark-directive@4.0.0",
-        "remark-gfm@4.0.1",
-        "remark-parse@11.0.0",
-        "remark-stringify@11.0.0",
-        "unified@11.0.5"
+        "react@19.0.0"
       ],
       "registryDependencies": [],
       "files": [
         {
-          "path": "source/learner-foundation/components/cursare/foundation/model/audio-url.ts",
+          "path": "source/learner-foundation/components/cursare/foundation/model/learner-runtime.ts",
           "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/audio-url.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/authoring-guide.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/authoring-guide.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/code-languages.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/code-languages.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/diagram-source.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/diagram-source.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/diff.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/diff.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/doc.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/doc.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/embed-url.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/embed-url.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/file-url.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/file-url.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/index.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/index.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/inventory.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/inventory.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/learner-anchors.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/learner-anchors.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/markdown.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/markdown.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/sanitize.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/sanitize.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/schema.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/schema.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/themes.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/themes.ts"
-        },
-        {
-          "path": "source/learner-foundation/components/cursare/foundation/model/video-url.ts",
-          "type": "registry:lib",
-          "target": "@components/cursare/foundation/model/video-url.ts"
+          "target": "@components/cursare/foundation/model/learner-runtime.ts"
         },
         {
           "path": "source/learner-foundation/components/cursare/foundation/runtime/content-cover.tsx",
@@ -138,7 +58,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -411,7 +331,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -454,7 +374,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -507,7 +427,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -552,7 +472,7 @@
         "lucide-react@1.28.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -584,7 +504,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -622,8 +542,8 @@
       "description": "The Cursare document reader with media, practice, polls, quizzes and learner notes.",
       "dependencies": [],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json",
-        "https://cursare.github.io/ui/r/v0/learner-runtime.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json",
+        "https://cursare.github.io/ui/r/v1/learner-runtime.json"
       ],
       "files": [
         {
@@ -640,6 +560,40 @@
       "docs": "The host injects routing, persistence, uploads, grading, polls and notes through typed callbacks."
     },
     {
+      "name": "cursare-course-player",
+      "type": "registry:block",
+      "title": "Cursare API Course Player",
+      "description": "A server-rendered course player that loads learner-safe published content from Cursare by content id.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json",
+        "https://cursare.github.io/ui/r/v1/learner-runtime.json"
+      ],
+      "files": [
+        {
+          "path": "source/cursare-course-player/components/cursare/course-player.tsx",
+          "type": "registry:component",
+          "target": "@components/cursare/course-player.tsx"
+        },
+        {
+          "path": "source/cursare-course-player/components/cursare/cursare-client.ts",
+          "type": "registry:lib",
+          "target": "@components/cursare/cursare-client.ts"
+        },
+        {
+          "path": "source/cursare-course-player/components/cursare/cursare-course-player.tsx",
+          "type": "registry:component",
+          "target": "@components/cursare/cursare-course-player.tsx"
+        },
+        {
+          "path": "source/cursare-course-player/components/cursare/styles.css",
+          "type": "registry:file",
+          "target": "@components/cursare/styles.css"
+        }
+      ],
+      "docs": "Call createCursareCoursePlayer once in trusted server code with a secret Cursare API key, then render the configured component with contentId only."
+    },
+    {
       "name": "course-shell",
       "type": "registry:block",
       "title": "Course Shell",
@@ -648,7 +602,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -686,7 +640,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -779,7 +733,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -839,7 +793,7 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json"
       ],
       "files": [
         {
@@ -919,8 +873,8 @@
         "react@19.0.0"
       ],
       "registryDependencies": [
-        "https://cursare.github.io/ui/r/v0/learner-foundation.json",
-        "https://cursare.github.io/ui/r/v0/learner-runtime.json"
+        "https://cursare.github.io/ui/r/v1/learner-foundation.json",
+        "https://cursare.github.io/ui/r/v1/learner-runtime.json"
       ],
       "files": [
         {
@@ -962,6 +916,16 @@
           "path": "source/blocks/components/cursare/curriculum-journey.tsx",
           "type": "registry:component",
           "target": "@components/cursare/curriculum-journey.tsx"
+        },
+        {
+          "path": "source/blocks/components/cursare/cursare-client.ts",
+          "type": "registry:lib",
+          "target": "@components/cursare/cursare-client.ts"
+        },
+        {
+          "path": "source/blocks/components/cursare/cursare-course-player.tsx",
+          "type": "registry:component",
+          "target": "@components/cursare/cursare-course-player.tsx"
         },
         {
           "path": "source/blocks/components/cursare/enrolled-course-home.tsx",

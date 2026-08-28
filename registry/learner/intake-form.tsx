@@ -1,6 +1,6 @@
 "use client"
 
-import { themeVars } from "@/components/cursare/foundation/model"
+import { themeVars } from "@/components/cursare/foundation/model/learner-runtime"
 import { ContentCoverMedia, LearnerRoot } from "@/components/cursare/foundation/runtime"
 import { DatePicker } from "@/components/cursare/ui/date-picker"
 import { Field, FieldLabel } from "@/components/cursare/ui/field"

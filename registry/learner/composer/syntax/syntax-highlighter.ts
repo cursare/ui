@@ -1,4 +1,4 @@
-import type { CodeLanguage } from "@/components/cursare/foundation/model"
+import type { CodeLanguage } from "@/components/cursare/foundation/model/learner-runtime"
 import { prismHighlighter } from "./prism"
 
 export type SyntaxLanguage = CodeLanguage

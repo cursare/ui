@@ -6,7 +6,7 @@ import {
   type MediaPlayerInstance,
   type MediaTimeUpdateEvent,
 } from "@/components/cursare/composer/media"
-import type { VideoProvider, VideoTextTrack } from "@/components/cursare/foundation/model"
+import type { VideoProvider, VideoTextTrack } from "@/components/cursare/foundation/model/learner-runtime"
 import { Button } from "@/components/cursare/ui/button"
 import { Input } from "@/components/cursare/ui/input"
 import { type KeyboardEvent, useEffect, useId, useMemo, useRef, useState } from "react"

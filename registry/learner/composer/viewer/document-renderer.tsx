@@ -9,7 +9,7 @@ import {
   parseDiagramSource,
   parseEmbedUrl,
   videoTextTracks,
-} from "@/components/cursare/foundation/model"
+} from "@/components/cursare/foundation/model/learner-runtime"
 import { syntaxHighlighter } from "@/components/cursare/composer/syntax"
 import { Button as LearnerButton } from "@/components/cursare/ui/button"
 import { Background, MarkerType, Panel, ReactFlow, useReactFlow } from "@xyflow/react"

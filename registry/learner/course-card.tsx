@@ -1,4 +1,4 @@
-import { themeVars } from "@/components/cursare/foundation/model"
+import { themeVars } from "@/components/cursare/foundation/model/learner-runtime"
 import { ContentCoverMedia, LearnerRoot } from "@/components/cursare/foundation/runtime"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/cursare/ui/avatar"
 import { Button } from "@/components/cursare/ui/button"

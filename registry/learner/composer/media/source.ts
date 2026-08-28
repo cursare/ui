@@ -1,4 +1,4 @@
-import type { VideoProvider } from "@/components/cursare/foundation/model"
+import type { VideoProvider } from "@/components/cursare/foundation/model/learner-runtime"
 import type { PlayerSrc } from "@vidstack/react"
 
 export function videoPlayerSource(provider: VideoProvider, src: string): PlayerSrc {

@@ -4,7 +4,7 @@ import {
   type LearnerAnchor,
   learnerAnchors,
   type ParsedContentDocument,
-} from "@/components/cursare/foundation/model"
+} from "@/components/cursare/foundation/model/learner-runtime"
 import {
   createVideoPlaybackService,
   type EditorMessages,

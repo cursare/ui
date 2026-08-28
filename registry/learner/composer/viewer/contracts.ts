@@ -5,7 +5,7 @@ export interface PollOption {
   text: string
 }
 
-import type { QuizOption, QuizQuestion } from "@/components/cursare/foundation/model"
+import type { QuizOption, QuizQuestion } from "@/components/cursare/foundation/model/learner-runtime"
 
 export type QuestionOption = QuizOption
 export type PoolQuestion = QuizQuestion

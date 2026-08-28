@@ -8,7 +8,7 @@ type RegistryItem = { registryDependencies?: string[] }
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const artifacts = await mkdtemp(resolve(tmpdir(), "cursare-registry-artifacts-"))
 const fixture = await mkdtemp(resolve(tmpdir(), "cursare-registry-consumer-"))
-const publicBase = "https://cursare.github.io/ui/r/v0/"
+const publicBase = /^https:\/\/cursare\.github\.io\/ui\/r\/v\d+\//
 
 async function run(command: string[], cwd: string) {
   const child = Bun.spawn(command, { cwd, stdout: "pipe", stderr: "pipe" })
@@ -122,7 +122,7 @@ try {
   )
   await writeFile(
     resolve(fixture, "src/main.tsx"),
-    `import * as card from "@/components/cursare/course-card"\nimport * as player from "@/components/cursare/course-player"\nimport "./styles.css"\n\nconst root = document.querySelector<HTMLDivElement>("#root")\nif (root) root.dataset.exports = String(Object.keys(card).length + Object.keys(player).length)\n`,
+    `import * as apiPlayer from "@/components/cursare/cursare-course-player"\nimport * as card from "@/components/cursare/course-card"\nimport * as player from "@/components/cursare/course-player"\nimport "./styles.css"\n\nconst root = document.querySelector<HTMLDivElement>("#root")\nif (root) root.dataset.exports = String(Object.keys(apiPlayer).length + Object.keys(card).length + Object.keys(player).length)\n`,
   )
   await writeFile(
     resolve(fixture, "src/styles.css"),
@@ -136,6 +136,7 @@ try {
   )
   await readFile(resolve(fixture, "src/components/cursare/course-card.tsx"))
   await readFile(resolve(fixture, "src/components/cursare/course-player.tsx"))
+  await readFile(resolve(fixture, "src/components/cursare/cursare-course-player.tsx"))
   await readFile(resolve(fixture, "src/components/cursare/composer/viewer/index.ts"))
   await run(["bun", "run", "check"], fixture)
   await run(["bun", "run", "build"], fixture)

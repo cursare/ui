@@ -1,4 +1,4 @@
-import type { LearnerAnchor } from "@/components/cursare/foundation/model"
+import type { LearnerAnchor } from "@/components/cursare/foundation/model/learner-runtime"
 
 // Never mutates the reader's rendered content.
 export function learnerAnchorDomTargets(

@@ -1,4 +1,4 @@
-import { themeVars } from "@/components/cursare/foundation/model"
+import { themeVars } from "@/components/cursare/foundation/model/learner-runtime"
 import { ContentCoverMedia, LearnerRoot } from "@/components/cursare/foundation/runtime"
 import { Progress, ProgressIndicator, ProgressTrack } from "@/components/cursare/ui/progress"
 import type { ReactNode } from "react"

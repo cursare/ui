@@ -2,7 +2,7 @@ import {
   type ContentNode,
   learnerAnchorId,
   type ParsedContentDocument,
-} from "@/components/cursare/foundation/model"
+} from "@/components/cursare/foundation/model/learner-runtime"
 export interface LearnerCourseProjection {
   key: string
   title: string

@@ -3,7 +3,7 @@
 import "@vidstack/react/player/styles/default/theme.css"
 import "@vidstack/react/player/styles/default/layouts/video.css"
 
-import type { VideoProvider, VideoTextTrack } from "@/components/cursare/foundation/model"
+import type { VideoProvider, VideoTextTrack } from "@/components/cursare/foundation/model/learner-runtime"
 import {
   MediaPlayer,
   type MediaPlayerInstance,

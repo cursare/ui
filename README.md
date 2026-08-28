@@ -14,6 +14,7 @@ The hosted catalog is available at [cursare.github.io/ui](https://cursare.github
 - `curriculum-journey`
 - `enrolled-course-home`
 - `course-player`
+- `cursare-course-player` — loads published learner-safe content from the Cursare API by id
 - `course-shell`
 - `course-outline`
 - `study-tools`
@@ -46,6 +47,32 @@ Or install one focused surface:
 ```bash
 bunx shadcn@4.14.0 add @cursare/course-card
 ```
+
+For API-backed delivery, install the server adapter:
+
+```bash
+bunx shadcn@4.14.0 add @cursare/cursare-course-player
+```
+
+Configure the organization API key once in trusted server code, then pages only need the
+content id:
+
+```tsx
+import {
+  createCursareCoursePlayer,
+} from "@/components/cursare/cursare-course-player"
+
+const apiKey = process.env.CURSARE_API_KEY
+if (!apiKey) throw new Error("CURSARE_API_KEY is required")
+export const CursarePlayer = createCursareCoursePlayer({ apiKey })
+
+export default function CoursePage() {
+  return <CursarePlayer contentId="content-id" />
+}
+```
+
+The key is sent only from the server to `GET /api/v1/contents/{id}/learner`; never expose it
+through a public browser environment variable.
 
 Without configuring a namespace, use the item URL directly:
 

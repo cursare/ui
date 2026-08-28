@@ -67,6 +67,8 @@ const itemDescriptions = {
 		"The course landing surface after enrollment, ready to resume or begin.",
 	"course-player":
 		"Rich document playback, activities, media, progress and study context.",
+	"cursare-course-player":
+		"Server-side Cursare API delivery: configure the key once, then render by content id.",
 	"course-shell":
 		"The responsive application shell around an active learning experience.",
 	"course-outline":
@@ -86,6 +88,7 @@ function sourceUrl(name) {
 		"course-catalog": "course-catalog.tsx",
 		"course-outline": "course-outline.tsx",
 		"course-player": "course-player.tsx",
+		"cursare-course-player": "cursare-course-player.tsx",
 		"course-shell": "course-shell.tsx",
 		"curriculum-journey": "curriculum-journey.tsx",
 		"enrolled-course-home": "enrolled-course-home.tsx",
